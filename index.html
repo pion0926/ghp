@@ -1,1007 +1,593 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>비영리 사단법인 글로벌헬스파트너스</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/YOUR-KIT-ID.js" crossorigin="anonymous"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-        }
-        header {
-            background-color: rgba(22, 71, 94, 0.8);
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        header img {
-            max-width: 150px;
-            display: block;
-            margin: 0 auto 10px;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        .language-selector {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-        }
-        .language-selector button {
-            background-color: #2c3e50;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            font-size: 0.9rem;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .language-selector button:hover {
-            background-color: #34495e;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 10px 0;
-            padding: 10px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        header nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        header nav a:hover {
-            text-decoration: underline;
-        }
-        .language-switch { background-color: rgba(44, 62, 80, 0.9);
-            color: white;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="description" content="지구촌 가난한 이웃의 자립을 돕고 지속가능한 발전을 실현하는 국제개발 NGO">
+<meta property="og:description" content="지구촌 가난한 이웃의 자립을 돕고 지속가능한 발전을 실현하는 국제개발 NGO">
+<meta name="keywords" content="지구촌 가난한 이웃의 자립을 돕고 지속가능한 발전을 실현하는 국제개발 NGO">
+<meta property="og:site_name" content="지구촌나눔운동-Global Civic Sharing">
+<meta property="og:title" content="지구촌나눔운동-Global Civic Sharing">
+<meta property="og:url" content="http://gcs.or.krweb_basic/">
+<meta property="og:description" content="지구촌 가난한 이웃의 자립을 돕고 지속가능한 발전을 실현하는 국제개발 NGO">
+<meta property="og:image" content="http://gcs.or.krweb_basic/img/common/ogimage.png">
+<meta property="og:image:width" content="400">
+<meta property="og:image:height" content="200">
+<link rel="shortcut icon" href="web_basic/img/common/favicon.ico">
+<title>지구촌나눔운동</title>
 
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KM4JGCQ8');</script>
+<!-- End Google Tag Manager -->
 
-        .announcement-section {
-            margin-top: 20px;
-        }
-        .announcement-section table {
-            width: 100%;
-            margin-top: 10px;
-            border-collapse: collapse;
-        }
-        .announcement-section th, .announcement-section td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: left;
-        }
-        .announcement-section th {
-            background-color: #f2f2f2;
-        }
-        .announcement-section caption {
-            text-align: left;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        .announcement-form {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #f1f1f1;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .announcement-form label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-        .announcement-form input, .announcement-form textarea, .announcement-form button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        .announcement-form button {
-            background-color: #2c3e50;
-            color: white;
-            cursor: pointer;
-            background-color: #fff;
-            color: #333;
-        }
-        .announcement-form button:hover {
-            background-color: #34495e;
-        }
-        .delete-button {
-            background-color: #e74c3c;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .hero {
-            background: url('images/banner.jpg') no-repeat center center/cover;
-            height: 500px;
-        }
-        .delete-button:hover {
-            background-color: #c0392b;
-        }
-        
-        .education {
-            margin-top: 20px;
-        }
-        .education h2 {
-            text-align: center;
-            color: #e67e22;
-        }
-        .education-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 20px;
-        }
-        .education-card {
-            flex: 1 1 calc(50% - 20px);
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        .education-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .education-card-content {
-            padding: 20px;
-            text-align: center;
-        }
-        .hero h1 {
-            font-size: 3rem;
-            margin: 0;
-        }
-        .hero a {
-            display: inline-block;
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .project {
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 20px;
-            text-align: center;
-            margin-bottom: 20px;
-            border-radius: 10px;
-        }
-        .medical-camp {
-            background-image: url('images/medical_camp.jpg');
-        }
-        .equipment-support {
-            background-image: url('images/equipment_support.jpg');
-        }
-        .health-education {
-            background-image: url('images/health_education.jpg');
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
+<link href="web_basic/css/default.css" type="text/css" rel="stylesheet">
+<link href="web_basic/css/layout.css" type="text/css" rel="stylesheet">
+<script src="web_basic/js/jquery-3.6.0.min.js"></script>
+<script src="web_basic/js/common.js"></script>
+<script src="web_basic/js/pictuerfill.js"></script>
+</head>
+<body>
 
-        .education-card-content h3 {
-            margin: 0 0 10px;
-            color: #e67e22;
-        }
-        .education-card-content button {
-            background-color: #e67e22;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .education-card-content button:hover {
-            background-color: #d35400;
-        }
-        .form-section {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .form-section form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        .form-section label {
-            font-weight: bold;
-        }
-        .form-section input, .form-section select, .form-section textarea {
-            padding: 10px;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .form-section button {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .form-section button:hover {
-            background-color: #2980b9;
-        }
-        </style>
-            <title>사단법인 글로벌헬스파트너스</title>
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    margin: 0;
-                    padding: 0;
-                    background: url('https://source.unsplash.com/1600x900/?global,health') no-repeat center center/cover;
-                    color: #333;
-                }
-                header {
-                    background-color: rgba(22, 71, 94, 0.8);
-                    color: white;
-                    padding: 20px 0;
-                    text-align: center;
-                }
-                header img {
-                    max-width: 150px;
-                    display: block;
-                    margin: 0 auto 10px;
-                }
-                header h1 {
-                    margin: 0;
-                    font-size: 2.5rem;
-                }
-                .language-selector {
-                    position: absolute;
-                    top: 10px;
-                    right: 20px;
-                }
-                .language-selector button {
-                    background-color: #2c3e50;
-                    color: white;
-                    border: none;
-                    padding: 5px 10px;
-                    font-size: 0.9rem;
-                    border-radius: 5px;
-                    cursor: pointer;
-                }
-                .language-selector button:hover {
-                    background-color: #34495e;
-                }
-                nav {
-                    display: flex;
-                    justify-content: center;
-                    gap: 20px;
-                    padding: 10px 0;
-                    background-color: rgba(44, 62, 80, 0.9);
-                    color: white;
-                }
-                nav a {
-                    color: white;
-                    text-decoration: none;
-                    font-size: 1rem;
-                }
-                nav a:hover {
-                    text-decoration: underline;
-                }
-                section {
-                    padding: 20px;
-                    max-width: 1200px;
-                    margin: 0 auto;
-                    background-color: rgba(255, 255, 255, 0.95);
-                    border-radius: 10px;
-                    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-                }
-        
-        
-                .announcement-section {
-                    margin-top: 20px;
-                }
-                .announcement-section table {
-                    width: 100%;
-                    margin-top: 10px;
-                    border-collapse: collapse;
-                }
-                .announcement-section th, .announcement-section td {
-                    border: 1px solid #ccc;
-                    padding: 10px;
-                    text-align: left;
-                }
-                .announcement-section th {
-                    background-color: #f2f2f2;
-                }
-                .announcement-section caption {
-                    text-align: left;
-                    font-size: 1.2rem;
-                    font-weight: bold;
-                    margin-bottom: 10px;
-                }
-                .announcement-form {
-                    margin-top: 20px;
-                    padding: 15px;
-                    background-color: #f1f1f1;
-                    border-radius: 8px;
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                }
-                .announcement-form label {
-                    display: block;
-                    margin-bottom: 8px;
-                    font-weight: bold;
-                }
-                .announcement-form input, .announcement-form textarea, .announcement-form button {
-                    width: 100%;
-                    padding: 10px;
-                    margin-bottom: 10px;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                    font-size: 1rem;
-                }
-                .announcement-form button {
-                    background-color: #2c3e50;
-                    color: white;
-                    cursor: pointer;
-                }
-                .announcement-form button:hover {
-                    background-color: #34495e;
-                }
-                .delete-button {
-                    background-color: #e74c3c;
-                    color: white;
-                    border: none;
-                    padding: 5px 10px;
-                    cursor: pointer;
-                    border-radius: 5px;
-                }
-                .delete-button:hover {
-                    background-color: #c0392b;
-                }
-                
-                .education {
-                    margin-top: 20px;
-                }
-                .education h2 {
-                    text-align: center;
-                    color: #e67e22;
-                }
-                .education-container {
-                    display: flex;
-                    flex-wrap: wrap;
-                    gap: 20px;
-                    margin-top: 20px;
-                }
-                .education-card {
-                    flex: 1 1 calc(50% - 20px);
-                    background-color: white;
-                    border-radius: 10px;
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                    overflow: hidden;
-                }
-                .education-card img {
-                    width: 100%;
-                    height: 200px;
-                    object-fit: cover;
-                }
-                .education-card-content {
-                    padding: 20px;
-                    text-align: center;
-                }
-                .education-card-content h3 {
-                    margin: 0 0 10px;
-                    color: #e67e22;
-                }
-                .education-card-content button {
-                    background-color: #e67e22;
-                    color: white;
-                    border: none;
-                    padding: 10px 20px;
-                    font-size: 1rem;
-                    border-radius: 5px;
-                    cursor: pointer;
-                }
-                .education-card-content button:hover {
-                    background-color: #d35400;
-                }
-                .form-section {
-                    margin-top: 20px;
-                    padding: 20px;
-                    background-color: #f9f9f9;
-                    border-radius: 10px;
-                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                }
-                .form-section form {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 15px;
-                }
-                .form-section label {
-                    font-weight: bold;
-                }
-                .form-section input, .form-section select, .form-section textarea {
-                    padding: 10px;
-                    font-size: 1rem;
-                    border: 1px solid #ccc;
-                    border-radius: 5px;
-                }
-                .form-section button {
-                    background-color: #3498db;
-                    color: white;
-                    border: none;
-                    padding: 10px 20px;
-                    font-size: 1rem;
-                    border-radius: 5px;
-                    cursor: pointer;
-                }
-                .form-section button:hover {
-                    background-color: #2980b9;
-                }
-                </style>
-    <title>비영리 사단법인 글로벌헬스파트너스</title>
-        
-    </head>
-    <body>
-        <img src="https://example.com/image.jpg" alt="Description of image">
-        <header>
-         <div class="language-selector">
-            <button id="toggle-language" onclick="toggleLanguage()">KO</button>
-        </div>
-        <img src="로고_가로형, 영문, 한글.jpg" alt="Global Health Partners Logo">
-        <h1>Global Health Partners</h1>
-        <p id="header-description">모두가 건강하게 살아갈 권리를 누릴 수 있는 세상을 만듭니다</p>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    </header>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KM4JGCQ8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-    <script>
-        // let currentLanguage = 'ko'; // This line is a duplicate and should be removed
+<ul class="sknavi_box">
+<li><a href="#section" class="sknavi">본문바로가기</a></li>
+<li><a href="#gnb" class="sknavi">메인메뉴 바로가기</a></li>
+<li><a href="#footer" class="sknavi">사이트정보 바로가기</a></li>
+</ul>
 
-            function toggleLanguage() {
-                currentLanguage = currentLanguage === 'ko' ? 'en' : 'ko';
-                setLanguage(currentLanguage);
-                document.getElementById('toggle-language').textContent = currentLanguage === 'ko' ? 'KO' : 'EN';
-            }
+<!-- Slick -->
+<link rel="stylesheet" type="text/css" href="web_basic/js/slick/slick.css" />
+<script src="web_basic/js/slick/slick.js"></script>
 
-            function setLanguage(lang) {
-                const elements = {
-                    'ko': {
-                    'page-title': '사단법인 글로벌헬스파트너스',
-                    'header-description': '모두가 건강하게 살아갈 권리를 누릴 수 있는 세상을 만듭니다'
-                    },
-                    'en': {
-                        'page-title': 'Global Health Partners',
-                        'header-description': 'We strive for a world where everyone can enjoy the right to a healthy life.'
-                    }
-                };
+<!-- Main -->
+<script src="web_basic/js/main.js"></script>
+<link rel="stylesheet" href="web_basic/css/main.css" type="text/css" media="all" />
 
-                const langData = elements[lang];
-                if (langData) {
-                    document.getElementById('page-title').textContent = langData['page-title'];
-                    document.getElementById('header-description').textContent = langData['header-description'];
-                }
-            }
+<header id="header">
+	<div class="topBtnList">
+		<!-- <ul class="memberList">
+			<li><a href="//mrmweb.hsit.co.kr/v2/Member/MemberJoin.aspx?action=info&amp;server=mKyKRXgHGO9LVrt7PllNmg==&amp;_ga=2.22933883.1916120373.1649640368-170658674.1642125707" target="_blank">로그인</a></li>
+			<li><a href="//mrmweb.hsit.co.kr/v2/Member/MemberJoin.aspx?action=join&amp;server=mKyKRXgHGO9LVrt7PllNmg==" target="_blank">회원가입</a></li>
+		</ul> -->
+		<div class="langList">
+			<select onChange="window.location.href=$(this).val();">
+				<option selected>Korean</option>
+				<option value="/web_eng">English</option>
+			</select>
+		</div>
+	</div>
+	<div class="headerWrap">
+		<h1><a href="web_basic"><img src="web_basic/img/common/logo.png" alt="지구촌나눔운동" /></a></h1>
+		<div class="rightCont">
+			<nav class="navList">
+				<ul id="gnb">
+																								<li class="active" >
+								<span><a href="web_basic/introduce/introduce.php?pagen=206" target="_self" >지구촌나눔운동</a></span>
 
-            document.addEventListener('DOMContentLoaded', () => {
-                setLanguage(currentLanguage);
-            });
-        </script>   
+								<div class="depth">
+									<ul>
+																								<li>
+															<a href="web_basic/introduce/introduce.php?pagen=206" target="_self" >단체소개</a>
+														</li>
+																											<li>
+															<a href="web_basic/introduce/introduce.php?pagen=207" target="_self" >인사말</a>
+														</li>
+																											<li  >
+															<a href="web_basic/introduce/introduce.php?pagen=230" target="_self" >연혁</a>
+															<div>
+																<ul>
+																																					<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=230" target="_self">2016 ~ 현재</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=231" target="_self">2011 ~ 2015</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=232" target="_self">2006 ~ 2010</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=233" target="_self">2001 ~ 2005</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=234" target="_self">1998 ~ 2000</a></li>
+																																				</ul>
+															</div>
+														</li>
 
-        <nav>
-            <div class="logo">
-                <a href="#"><img src="images/logo.png" alt="로고" height="50"></a>
-                <a href="#about" id="nav-about">소개</a>
-                <a href="#projects" id="nav-projects">주요사업</a>
-                <a href="#education" id="nav-education">교육신청</a>
-                <a href="#donation" id="nav-donation">후원하기</a>
-                <a href="#announcement" id="announcement">공지사항</a>
-                <a href="#contact" id="nav-contact">연락처</a>
-            </div>
-            <div class="language-switch" onclick="toggleLanguage()">EN</div>
-        </nav>
-    </header>
-    <section class="hero">
-        <div>
-            <h1 class="lang" data-ko="글로벌헬스파트너스" data-en="Global Health Partners">글로벌헬스파트너스</h1>
-            <a href="#donate" class="lang" data-ko="후원하기" data-en="Donate">후원하기</a>
-        </div>
-    </section>
-    <section id="about">
-        <h2 class="lang" data-ko="우리는 누구인가요?" data-en="Who are we?">우리는 누구인가요?</h2>
-        <p class="lang" data-ko="비영리 사단법인 글로벌헬스파트너스는 의료 사각지대를 지원하는 단체입니다." data-en="Global Health Partners is a nonprofit organization supporting medical blind spots.">비영리 사단법인 글로벌헬스파트너스는 의료 사각지대를 지원하는 단체입니다.</p>
-    </section>
-    <section id="projects">
-        <h2 class="lang" data-ko="주요 사업" data-en="Our Projects">주요 사업</h2>
-        <div class="project medical-camp">
-            <h3 class="lang" data-ko="무료 의료 캠프" data-en="Free Medical Camp">무료 의료 캠프</h3>
-            <p class="lang" data-ko="소외 계층을 위한 건강 검진 및 치료" data-en="Health checkups and treatments for marginalized groups">소외 계층을 위한 건강 검진 및 치료</p>
-        </div>
-        <div class="project equipment-support">
-            <h3 class="lang" data-ko="의료 기기 지원" data-en="Medical Equipment Support">의료 기기 지원</h3>
-            <p class="lang" data-ko="현지 병원 및 의료진을 위한 장비 제공" data-en="Providing equipment for local hospitals and medical personnel">현지 병원 및 의료진을 위한 장비 제공</p>
-        </div>
-        <div class="project health-education">
-            <h3 class="lang" data-ko="보건 교육" data-en="Health Education">보건 교육</h3>
-            <p class="lang" data-ko="지역사회 대상 건강 교육 및 인식 개선" data-en="Health education and awareness for local communities">지역사회 대상 건강 교육 및 인식 개선</p>
-        </div>
-    <section id="about" class="about">
-        <h2>우리는 누구인가요?</h2>
-        <p>비전: "더 나은 건강, 더 나은 내일 (Better Health, Better Tomorrow)" </p>
-        <p>비영리 사단법인 글로벌 헬스 파트너스는 전 세계 취약 계층의 건강 증진과 보건의료 혁신을 통해 누구도 소외되지 않는 건강한 삶을 지원합니다.</p>
-        <h3>우리가 추구하는 가치</h3>
-        <ul>
-            <li><strong>협력(Partnership):</strong> 신뢰와 상호 존중을 바탕으로 다양한 파트너와 협력하여 공동의 목표를 실현해 나갑니다.</li>
-            <li><strong>포용성(Inclusivity):</strong> 지구촌 취약계층의 건강 격차를 해소하기 위해 노력합니다.</li>
-            <li><strong>투명성(Transparency):</strong> 공정과 신뢰를 바탕으로 운영의 투명성을 추구합니다. </li>
-            <li><strong>지속 가능성(Sustainability):</strong> 모두를 위한 지속가능한 건강한 미래를 만들어 갑니다.</li>
-        </ul>
-        <h2>함께 하는 사람들</h2>
-        <div class="organization-structure">
-            <div class="level">
-                <div class="organization-card">
-                    <img src="images/chairperson.jpg" alt="이사장">
-                    <h3>이사장</h3>
-                    <p>정애숙</p>
-                    <p>보건학 박사, 국제보건 전문가<br></p>
-            </div>
-            
-    
-    </header>
-    <section class="hero">
-        <div>
-            <h1 class="lang" data-ko="글로벌헬스파트너스" data-en="Global Health Partners">글로벌헬스파트너스</h1>
-            <a href="#donate" class="lang" data-ko="후원하기" data-en="Donate">후원하기</a>
+																												<li  >
+															<a href="web_basic/introduce/introduce.php?pagen=448" target="_self" >재정보고</a>
+															<div>
+																<ul>
+																																					<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=448" target="_self">2023</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=447" target="_self">2022</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=354" target="_self">2021</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=235" target="_self">2020</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=236" target="_self">2019</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=237" target="_self">2018</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=238" target="_self">2017</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=239" target="_self">2016</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=240" target="_self">2015</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=241" target="_self">2014</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=242" target="_self">2013</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=243" target="_self">2012</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=244" target="_self">2011</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=245" target="_self">2010</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=352" target="_self">2009</a></li>
+																																				</ul>
+															</div>
+														</li>
 
-            </div>
+																												<li  >
+															<a href="web_basic/introduce/introduce.php?pagen=246" target="_self" >조직도</a>
+															<div>
+																<ul>
+																																					<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=246" target="_self">조직도</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=247" target="_self">이사회</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=248" target="_self">사업자문위원</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=428" target="_self">사업전문위원</a></li>
+																																								<li >
+																				<a href="web_basic/introduce/introduce.php?pagen=249" target="_self">본부/해외사업소</a></li>
+																																				</ul>
+															</div>
+														</li>
 
-            <h3 style="text-align:center; margin-top:30px;">자문위원 명단</h3>
-            <table class="advisor-table">
-                <thead>
-                    <tr>
-                        <th>프로필</th>
-                        <th>이름</th>
-                        <th>주요경력</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="images/자문위원_남은우.jpg" alt="남은우" class="advisor-photo"></td>
-                        <td>국제보건</td>
-                        <td>연세대학교 보건행정학과 교수/연세글로벌헬스센터장</td>
-                    </tr>
-                    <tr>
-                        <td><img src="images/자문위원_박소화.jpg" alt="박소화" class="advisor-photo"></td>
-                        <td>교육공학</td>
-                        <td>교육공학 박사</td>
-                    </tr>
-                    <tr>
-                        <td><img src="images/자문위원_김둘순.jpg" alt="김둘순" class="advisor-photo"></td>
-                        <td>젠더</td>
-                        <td>한국여성정책연구원 양성평등연구본부장</td>
-                    </tr>
-                    <tr>
-                        <td><img src="images/자문위원_정태우.jpg" alt="정태우" class="advisor-photo"></td>
-                        <td>병원건축</td>
-                        <td>유일건축 연구소장</td>
-                    </tr>
-                    <tr>
-                        <td><img src="images/자문위원_최병호.jpg" alt="최병호" class="advisor-photo"></td>
-                        <td>교통안전</td>
-                        <td> 전 교통안전공단 교통안전 본부장/제일엔지니어링 부사장</td>
-                    </tr>
-                    <tr>
-                        <td><img src="images/자문위원_함영희.jpg" alt="함영희" class="advisor-photo"></td>
-                        <td>임상간호/국제보건</td>
-                        <td>전, 국군간호사관학교 생도대장/경북과학대학 간호과 교수</td>
-                    </tr>
-                    <tr>
-                        <td><img src="images/자문위원_강선주.jpg" alt="강선주" class="advisor-photo"></td>
-                        <td>국제보건</td>
-                        <td>연세대학교 국제보건대학원 교수</td>
-                    </tr>
-                    <tr>
-                        <td><img src="images/자문위원_서영준.jpg" alt="서영준" class="advisor-photo"></td>
-                        <td>병원경영</td>
-                        <td>전 연세대학교 보건행정학과 교수/영월의료원장</td>
-                    </tr>
-                    <tr>
-                        <td><img src="images/자문위원_김호중.jpg" alt="김호중" class="advisor-photo"></td>
-                        <td>응급의학</td>
-                        <td>순천향대학교 응급의학과 교수</td>                         
-                    </tr>
-                    <tr>
-                        <td><img src="images/자문위원_이진숙.jpg" alt="이진숙" class="advisor-photo"></td>
-                        <td>지역보건</td>
-                        <td>전 서원구 보건소장</td>
-                    </tr>
-                    <tr>
-                        <td><img src="images/자문위원_정설희.jpg" alt="정설희" class="advisor-photo"></td>
-                        <td>국제협력/건강보험</td>
-                        <td>건강보험심사평가원 국제협력단장</td>
-                    </tr>
-                    <tr>
-                        <td><img src="images/자문위원_박민수.jpg" alt="박민수" class="advisor-photo"></td>
-                        <td>의료장비/기자재</td>
-                        <td>루카스 메디컨설팅 대표</td>
-                    </tr>
-                    <tr>
-                        <td><img src="images/자문위원_신동민.jpg" alt="신동민" class="advisor-photo"></td>
-                        <td>응급의료</td>
-                        <td>교통대학교 응급구조학과 교수</td>
-                    </tr>
-                    <tr>
-                        <td><img src="images/자문위원_김철규.jpg" alt="김철규" class="advisor-photo"></td>
-                        <td>보건/간호</td>
-                        <td>충북대학교 간호학과 교수</td>
-                    </tr>
-                    <tr>
-                        <td><img src="images/자문위원_최창휴.jpg" alt="최창휴" class="advisor-photo"></td>
-                        <td>흉부외과</td>
-                        <td>가천 길병원 심장혈관흉부외과 교수</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="organization-card">
-            <img src="https://via.placeholder.com/100" alt="사무국">
-            <h3>사무국</h3>
-            <p>신인찬/카발리니 연아</p>
-            <p>행정 관리</p>
-        </div>
-        <div class="organization-card">
-            <img src="https://via.placeholder.com/100" alt="교육운영본부">
-            <h3>글로벌헬스교육본부부</h3>
-            <p>이혜미</p>
-            <p>교육 프로그램 기획 및 운영영</p>
-        </div>
-        <div class="organization-card">
-            <img src="https://via.placeholder.com/100" alt="사업본부">
-            <h3>전략실행 본부</h3>
-            <p>이은경</p>
-            <p>프로젝트 실행 및 관리</p>
-        </div>
-        <div class="organization-card">
-            <img src="https://via.placeholder.com/100" alt="봉사본부">
-            <h3>공익활동지원본부</h3>
-            <p>양은숙/노은정</p>
-            <p>봉사활동 기획 및 운영</p>
-        </div>
-        <div class="organization-card">
-            <img src="https://via.placeholder.com/100" alt="기획평가본부">
-            <h3>커뮤니케이션본부</h3>
-            <p>이명자</p>
-            <p>홍보기획 및 홍보자료 제작</p>
-        </div>
-        <div class="organization-card">
-            <img src="https://via.placeholder.com/100" alt="연구기획본부">
-            <h3>기획평가연구본부</h3>
-            <p>신인찬</p>
-            <p>연구 및 정책 개발</p>
-        </div>
-    <section id="projects">
-        <h2>주요 사업</h2>
-        <p> 보건정책 및 연구, 국국제협력과 긴급 의료 지원, 지역 사회 기반 보건 프로그램, 보건의료료 인력 교육 및 훈련, 취약계층 건강증진을 위한 봉사활동</p>
-    </section>
-    
-    <section id="activities" class="activities">
-        <h2>현재 프로젝트</h2>
-        <p>지역사회 건강증진 캠페인과 의료지원 활동을 통해 더 나은 세상을 만들어갑니다.</p>
-        <div class="project-images"> <section id="about">
-            <h2 class="lang" data-ko="우리는 누구인가요?" data-en="Who are we?">우리는 누구인가요?</h2>
-            <p class="lang" data-ko="비영리 사단법인 글로벌헬스파트너스는 의료 사각지대를 지원하는 단체입니다." data-en="Global Health Partners is a nonprofit organization supporting medical blind spots.">비영리 사단법인 글로벌헬스파트너스는 의료 사각지대를 지원하는 단체입니다.</p>
-            <img src="https://source.unsplash.com/200x150/?community,health" alt="Community Health Project">
-            <img src="https://source.unsplash.com/200x150/?medical,support" alt="Medical Support">
-            <img src="https://source.unsplash.com/200x150/?health,teamwork" alt="Health Teamwork">
-        </div>
+																												<li>
+															<a href="web_basic/introduce/introduce.php?pagen=211" target="_self" >홍보대사</a>
+														</li>
+																											<li>
+															<a href="web_basic/introduce/introduce.php?pagen=212" target="_self" >찾아오시는길</a>
+														</li>
+																											<li>
+															<a href="web_basic/introduce/write.php?pagen=363" target="_self" >문의하기</a>
+														</li>
+																						</ul>
+								</div>
+							</li>
+																																																																																																																																																																																																																										<li class="active" >
+								<span><a href="web_basic/business/business.php?pagen=356" target="_self" >사업안내</a></span>
 
-        <h2>완료된 프로젝트</h2>
-        <p>지난 프로젝트를 통해 얻은 성과를 공유합니다.</p>
-        <div class="project-images">
-            <img src="https://source.unsplash.com/200x150/?global,success" alt="Global Success">
-            <img src="https://source.unsplash.com/200x150/?medical,help" alt="Medical Help">
-            <img src="https://source.unsplash.com/200x150/?teamwork,achievement" alt="Team Achievement">
-        </div>
-    </section>
+								<div class="depth">
+									<ul>
+																								<li  >
+															<a href="web_basic/business/business.php?pagen=356" target="_self" >해외사업</a>
+															<div>
+																<ul>
+																																					<li >
+																				<a href="web_basic/business/business.php?pagen=356" target="_self">해외사업</a></li>
+																																								<li >
+																				<a href="web_basic/business/business.php?pagen=449" target="_self">KOICA 청년중기봉사단</a></li>
+																																				</ul>
+															</div>
+														</li>
 
-    <section id="education" class="education">
-        <h2 id="education-title">교육 안내 및 신청</h2>
-        <p id="education-description">글로벌헬스파트너스는 다음과 같은 전문 교육 과정을 통해 건강한 세상을 만드는 데 기여하고 있습니다:</p>
-        <ul id="education-list">
-            <li>국제보건 전문가 과정: 국제 보건 이슈에 대한 심층적인 이해와 국제보건 기획, 실행, 평가에 필요한 실무 능력 배양.</li>
-            <li>스포츠보건 전문가 과정: 스포츠 현장에서 발생하는 손상의 예방, 치료, 재활 역량 배양.</li>
-        </ul>
+																												<li  >
+															<a href="web_basic/business/business.php?pagen=250" target="_self" >국내사업</a>
+															<div>
+																<ul>
+																																					<li >
+																				<a href="web_basic/business/business.php?pagen=250" target="_self">지구촌시민학교</a></li>
+																																								<li >
+																				<a href="web_basic/business/business.php?pagen=251" target="_self">지구촌대학생캠프</a></li>
+																																								<li >
+																				<a href="web_basic/business/business.php?pagen=252" target="_self">지구촌봉사단</a></li>
+																																								<li >
+																				<a href="web_basic/business/business.php?pagen=253" target="_self">해외파견간사</a></li>
+																																								<li >
+																				<a href="web_basic/business/business.php?pagen=214" target="_self">정책사업</a></li>
+																																				</ul>
+															</div>
+														</li>
 
-        <div class="education-container">
-            <div class="education-card">
-                <img src="https://source.unsplash.com/800x600/?healthcare,education" alt="국제보건 전문가 과정">
-                <div class="education-card-content">
-                    <h3>국제보건 전문가 과정</h3>
-                    <button onclick="window.location.href='#apply-form';">교육 신청</button>
-                </div>
-            </div>
-            <div class="education-card">
-                <img src="https://source.unsplash.com/800x600/?sports,health" alt="스포츠보건 전문가 과정">
-                <div class="education-card-content">
-                    <h3>스포츠보건 전문가 과정</h3>
-                    <button onclick="window.location.href='#apply-form';">교육 신청</button>
-                </div>
-            </div>
-        </div>
-        <div id="apply-form" class="form-section">
-            <h3>교육 신청</h3>
-            <form>
-                <label for="name">이름:</label>
-                <input type="text" id="name" name="name" required>
+																							</ul>
+								</div>
+							</li>
+																																																																										<li class="active" >
+								<span><a href="web_basic/sponsor/sponsor.php?pagen=215" target="_self" >후원하기</a></span>
 
-                <label for="phone">전화번호:</label>
-                <input type="tel" id="phone" name="phone" required>
+								<div class="depth">
+									<ul>
+																								<li>
+															<a href="web_basic/sponsor/sponsor.php?pagen=215" target="_self" >후원하기</a>
+														</li>
+																											<li  >
+															<a href="web_basic/campaign/campaigngo.php?pagen=265" target="_self" >캠페인후원</a>
+															<div>
+																<ul>
+																																					<li >
+																				<a href="web_basic/campaign/campaigngo.php?pagen=265" target="_self">진행중인 캠페인</a></li>
+																																								<li >
+																				<a href="web_basic/campaign/campaignend.php?pagen=266" target="_self">종료된 캠페인</a></li>
+																																				</ul>
+															</div>
+														</li>
 
-                <label for="email">이메일:</label>
-                <input type="email" id="email" name="email" required>
+																												<li  >
+															<a href="web_basic/sponsor/sponsor.php?pagen=360" target="_self" >기업후원</a>
+															<div>
+																<ul>
+																																					<li >
+																				<a href="web_basic/sponsor/sponsor.php?pagen=360" target="_self">기업후원 안내</a></li>
+																																								<li >
+																				<a href="web_basic/sponsor/sponsor.php?pagen=361" target="_self">희망 파트너</a></li>
+																																				</ul>
+															</div>
+														</li>
 
-                <label for="course">과정 선택:</label>
-                <select id="course" name="course" required>
-                    <option value="international-health">국제보건 전문가 과정</option>
-                    <option value="sports-health">스포츠보건 전문가 과정</option>
-                </select>
+																												<li>
+															<a href="web_basic/sponsor/write.php?pagen=365" target="_self" >문의/제휴신청</a>
+														</li>
+																						</ul>
+								</div>
+							</li>
+																																																																				<li class="active" >
+								<span><a href="web_basic/board/list.php?pagen=285" target="_self" >소식</a></span>
 
-                <label for="message">문의 사항:</label>
-                <textarea id="message" name="message" rows="4"></textarea>
+								<div class="depth">
+									<ul>
+																								<li>
+															<a href="web_basic/board/list.php?pagen=285" target="_self" >공지/뉴스</a>
+														</li>
+																											<li>
+															<a href="web_basic/board/list.php?pagen=299" target="_self" >뉴스레터</a>
+														</li>
+																											<li>
+															<a href="web_basic/news/list.php?pagen=337" target="_self" >소식지</a>
+														</li>
+																											<li>
+															<a href="web_basic/report/list.php?pagen=328" target="_self" >연차보고</a>
+														</li>
+																											<li>
+															<a href="web_basic/board_custom/books/list.php?pagen=348" target="_self" >책자</a>
+														</li>
+																											<li>
+															<a href="web_basic/board/list.php?pagen=314" target="_self" >사진/영상</a>
+														</li>
+																						</ul>
+								</div>
+							</li>
+																																																																							</ul>
+			</nav>
+			<p class="btnGo"><a href="//online.mrm.or.kr/y1YavoN" target="_blank">연대하기</a></p>
+			<p class="btnAllNav"><a href="javascript:;"><img src="web_basic/img/common/all_nav.gif" alt="전체메뉴 보기" /></a></p>
+		</div>
+	</div>
+</header><div class="wrap">
 
-                <button type="submit">신청 완료</button>
-            </form>
-        </div>
-    </section>
+	<div class="mainBanner">
+		<button class="slick-arrow slick-prev" aria-label="Previous" type="button"><img src="web_basic/img/main/visual_banner_prev.png" alt="Previous" /></button>
+		<div class="mainBannerBox">
+			<div class="mainBannerCont">
+												<picture>
+									<source srcset="web_basic/program/file/imgviewer.php?pagen=154&psize=&ftype=5&fchecksum=c3e65e0669fa312c16c6cd9b27234ce5ff8dacf001ee5eefc101bf503b54cbcb" media="(max-width: 767px)">
+									<a href="https://www.gcs.or.krweb_basic/campaign/view.php?pagen=267&seqno=46" target="_blank">										<img srcset="web_basic/program/file/9.jpg" src="web_basic/program/file/9.jpg" />
+									</a>								</picture>
+											</div>
+		</div>
+		<button class="slick-arrow slick-next" aria-label="Next" type="button"><img src="web_basic/img/main/visual_banner_next.png" alt="Next" /></button>
+	</div>
 
-    <section id="announcement" class="announcement">
-        <h2>공지사항</h2>
-        <table>
-            <caption>등록된 공지사항</caption>
-            <thead>
-                <tr>
-                    <th>일련번호</th>
-                    <th>제목</th>
-                    <th>내용</th>
-                    <th>등록일</th>
-                    <th>작업</th>
-                </tr>
-            </thead>
-            <tbody id="announcement-list">
-               
-            </tbody>
-        </table>
+	<div class="reportCont">
+		<div class="contents">
+			<div class="textCont">
+				<dl>
+					<dt><span>후원금은 투명하게</span> 관리됩니다.</dt>
+					<dd>지구촌나눔운동은 건강한 단체입니다.<br/> 후원금이 꼭 필요한 곳에 쓰이도록 모든 수입과 지출을 투명하게 관리하며,<br/> 활동 목적에 따라 효율적으로 재정을 사용하고 있습니다.</dd>
+				</dl>
+				<ul>
+					<li class="annualBox"><a href="web_basic/report/list.php?pagen=328">연차보고 <span><img src="web_basic/img/main/report_view.gif" alt="바로가기" /></span></a></li>
+					<li class="financeBox"><a href="web_basic/introduce/introduce.php?pagen=448">재정보고 <span><img src="web_basic/img/main/report_view.gif" alt="바로가기" ></span></a></li>
+				</ul>
+			</div>
+			<div class="graphCont">
+				<div class="imgBox"><img src="web_basic/img/main/report_graph.png" alt="83% (2020사업수행비)" /></div>
+				<p>지구촌나눔운동은<br/> 후원금의 80% 이상을 사업비로 사용합니다.</p>
+			</div>
+		</div>
+	</div>
 
-        <div class="announcement-form">
-            <h3>공지사항 추가</h3>
-            <form id="asks-form">
-                <label for="title">제목</label>
-                <input type="text" id="title" name="title" placeholder="제목을 입력하세요" required>
+	<div class="newsList">
+		<div class="contents">
+			<h3 class="titleLine">지구촌나눔운동 소식</h3>
+						<button class="slick-arrow slick-prev" aria-label="Previous" type="button"><img src="web_basic/img/main/news_prev.gif" alt="Previous" /></button>
+			<div class="newsBannerList">
+											<div>
+																	<a href="web_basic/board/view.php?pagen=286&sno=1739&seqno=1739">
+																	<p class="imgBox">
+																					<img src="web_basic/program/file/1.jpg" alt="이미지">
+																				</p>
+									<dl>
+										<dt>공지/뉴스</dt>
+										<dd>[채용] 2025 상반기 ODA YP(영프로페셔널) 합격자 발표</dd>
+									</dl>
+								</a>
+							</div>
+														<div>
+																	<a href="web_basic/board/view.php?pagen=286&sno=1738&seqno=1738">
+																	<p class="imgBox">
+																					<img src="web_basic/program/file/2.jpg" alt="이미지">
+																				</p>
+									<dl>
+										<dt>공지/뉴스</dt>
+										<dd>[청년중기봉사단] 해외봉사가 끝난 뒤, 성과공유회 및 해단식 현장 | 2024 청년중기봉사단 거버넌스 분야</dd>
+									</dl>
+								</a>
+							</div>
+														<div>
+																	<a href="web_basic/board/view.php?pagen=286&sno=1737&seqno=1737">
+																	<p class="imgBox">
+																					<img src="web_basic/program/file/3.jpg" alt="이미지">
+																				</p>
+									<dl>
+										<dt>공지/뉴스</dt>
+										<dd>[청년중기봉사단] 2024-2026 KOICA 청년중기봉사단(거버넌스) 1차파견 성과공유회 및 해단식🚩</dd>
+									</dl>
+								</a>
+							</div>
+														<div>
+																	<a href="web_basic/board/view.php?pagen=286&sno=1736&seqno=1736">
+																	<p class="imgBox">
+																					<img src="web_basic/program/file/4.jpg" alt="이미지">
+																				</p>
+									<dl>
+										<dt>공지/뉴스</dt>
+										<dd>[한국강사신문] 한민 강사의 “KOICA-청년중기봉사단 타문화 이해” 강의 성료</dd>
+									</dl>
+								</a>
+							</div>
+														<div>
+																	<a href="web_basic/board/view.php?pagen=286&sno=1735&seqno=1735">
+																	<p class="imgBox">
+																					<img src="web_basic/program/file/5.jpg" alt="이미지">
+																				</p>
+									<dl>
+										<dt>공지/뉴스</dt>
+										<dd>[뉴스포털1] 지구촌나눔운동 라오스 농업농촌개발 2차 전략수립위원회 개최</dd>
+									</dl>
+								</a>
+							</div>
+														<div>
+																	<a href="web_basic/board/view.php?pagen=286&sno=1734&seqno=1734">
+																	<p class="imgBox">
+																					<img src="web_basic/program/file/6.jpg" alt="이미지">
+																				</p>
+									<dl>
+										<dt>공지/뉴스</dt>
+										<dd>[지구촌나눔운동] [해외사업팀] 2024 하반기 지구촌나눔운동 KOICA YP 후기 🌐✨</dd>
+									</dl>
+								</a>
+							</div>
+														<div>
+																	<a href="web_basic/board/view.php?pagen=286&sno=1733&seqno=1733">
+																	<p class="imgBox">
+																					<img src="web_basic/program/file/7.jpg" alt="이미지">
+																				</p>
+									<dl>
+										<dt>공지/뉴스</dt>
+										<dd>[르완다] 르완다 냐루바카 지역의 이야기 | 10년간의 자립 지원 프로젝트</dd>
+									</dl>
+								</a>
+							</div>
+														<div>
+																	<a href="web_basic/board/view.php?pagen=286&sno=1732&seqno=1732">
+																	<p class="imgBox">
+																					<img src="web_basic/program/file/8.jpg" alt="이미지">
+																				</p>
+									<dl>
+										<dt>공지/뉴스</dt>
+										<dd>[연합뉴스] [다시 희망] ⑥ 김혜경 지구촌나눔운동 이사장 "'든든한 희망파트너' 될 것"</dd>
+									</dl>
+								</a>
+							</div>
+										</div>
+			<button class="slick-arrow slick-next" aria-label="Next" type="button"><img src="web_basic/img/main/news_next.gif" alt="Next" /></button>
+			<p class="btnMore"><a href="web_basic/board/list.php?pagen=285">자세히보기<img src="web_basic/img/main/board_more.gif" alt="Icon" /></a></p>
+		</div>
+	</div>
 
-                <label for="content">내용</label>
-                <textarea id="content" name="content" rows="5" placeholder="내용을 입력하세요" required></textarea>
+	<div class="manifesto">
+		<div class="contents">
+			<div class="youtubeCont"><iframe width="640" height="480" src="https://www.youtube.com/embed/v-buTGRv5Cg" title="국제개발NGO 지구촌나눔운동 기관 소개🔎" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+			<div class="manifestoCont">
+				<h3 class="titleLine"><span>사명선언서</span></h3>
+				<p class="summary">지구촌 가난한 이웃의 자립을 돕고,<br/> 지속가능한 발전을 실현합니다.</p>
+				<dl>
+					<dt>미션</dt>
+					<dd>
+						<ol>
+							<li><span>1</span> 개발도상국 주민들의 역량 강화를 통한 개발 지원</li>
+							<li><span>2</span> 지구촌 시민사회의 발전 지원</li>
+							<li><span>3</span> 인류가 직면한 과제들과 연계된 교육과 자원활동 지원</li>
+							<li><span>4</span> 빈곤퇴치와 지속가능한 발전을 위한 연구 및 정책캠페인</li>
+							<li><span>5</span> 지구촌 나눔 운동의 확산</li>
+						</ol>
+					</dd>
+				</dl>
+			</div>
+		</div>
+	</div>
 
-                <button type="submit">공지사항 등록</button>
-            </form>
-        </div>
-    </section>
+	<div class="support">
+		<div class="contents">
+			<h3 class="titleLine">지구촌 어려운 <span>이웃</span>의 <span>자립</span>을 돕는<br/> <span>나눔운동</span>에 당신을 초대합니다.</h3>
+			<div class="supportList">
+				<div><a href="javascript:;" onclick="open('https://mrmweb.hsit.co.kr/v2/Member/MemberJoin.aspx?action=join&server=mKyKRXgHGO9LVrt7PllNmg==&supportgroup=1','',',scrollbars=yes,top=0,left=0,status=no,resizable=no,menubar=no,width=1050,height=700')"><img src="web_basic/img/main/support_01.jpg" alt="정기후원" /></a></div>
+				<div><a href="javascript:;" onclick="open('https://mrmweb.hsit.co.kr/v2/Member/SupportOnce.aspx?action=once&amp;server=mKyKRXgHGO9LVrt7PllNmg==&amp;supportgroup=6','',',scrollbars=yes,top=0,left=0,status=no,resizable=no,menubar=no,width=1050,height=700')"><img src="web_basic/img/main/support_02.jpg" alt="특별후원" /></a></div>
+				<div><a href="web_basic/sponsor/sponsor.php?pagen=360"><img src="web_basic/img/main/support_03.jpg" alt="사업후원" /></a></div>
+				<div><a href="web_basic/campaign/campaigngo.php?pagen=265"><img src="web_basic/img/main/support_04.jpg" alt="캠페인후원" /></a></div>
+			</div>
+			<p class="btnMore"><a href="web_basic/sponsor/sponsor.php?pagen=215">자세히보기 <img src="web_basic/img/main/board_more.gif" alt="Icon" /></a></p>
+		</div>
+	</div>
 
-    <footer>
-        <p>&copy; 2025 Global Health Partners. All rights reserved. | <a href="#">Privacy Policy</a></p>
-    </footer>
-
-    <script>
-        const form = document.getElementById('announcement-form');
-        const list = document.getElementById('announcement-list');
-        let announcements = [];
-
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const title = form.title.value;
-            const content = form.content.value;
-            const date = new Date().toLocaleDateString();
-            const id = announcements.length + 1;
-
-            const announcement = { id, title, content, date };
-            announcements.unshift(announcement);
-
-            updateAnnouncementsList();
-            form.reset();
+		<div class="newsLetterForm">
+		<div class="contents">
+			<h3 class="titleLine"><img src="web_basic/img/main/newsletter_icon.gif" alt="mail Icon" /> 뉴스레터 신청</h3>
+			<div class="formCont">
+				<form action="web_basic/program/newsletter/process.php?pagen=321" method="POST" name="newsApply" onsubmit="return newsApplywrite();">
+					<input type="hidden" name="mode" value="">
+					<div class="formBox">
+						<dl class="nameCont">
+							<dt>이름</dt>
+							<dd><input type="text" name="P_name" placeholder="이름 입력" title="이름" /></dd>
+						</dl>
+						<dl class="emailCont">
+							<dt>이메일</dt>
+							<dd>
+								<input type="text" name="P_email" placeholder="메일주소 입력" title="이메일" /><span>@</span><input type="text" name="P_email_domain" id="email_domain" title="주소" />
+								<select id="emailSelect" >
+									<option value="">직접입력</option>
+									<option value="naver.com">naver.com</option> 
+									<option value="daum.net">daum.net</option> 
+									<option value="gmail.com">gmail.com</option>
+									<option value="nate.com">nate.com</option>
+									<option value="hanmail.net">hanmail.net</option> 
+									<option value="hotmail.com">hotmail.com</option> 
+									<option value="yahoo.co.kr">yahoo.co.kr</option> 
+									<option value="empas.com">empas.com</option> 
+									<option value="dreamwiz.com">dreamwiz.com</option> 
+									<option value="freechal.com">freechal.com</option> 
+									<option value="korea.com">korea.com</option> 
+									<option value="hanmir.com">hanmir.com</option> 
+									<option value="paran.com">paran.com</option>
+								</select>
+							</dd>
+						</dl>
+						<p class="btnSubmit"><input type="image" src="web_basic/img/main/btn_send.gif" title="신청하기" /></p>
+					</div>
+					<div class="agree">
+						<label for="agree">개인정보의 수집 및 이용에 동의하십니까?</label><input type="checkbox" name="" id="agree" /> <a href="web_basic/etc/etc.php?pagen=378" target="_blank"><img src="web_basic/img/common/btn_agree.gif" alt="전문보기" /></a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script>
+		$( "#emailSelect" ).change(function(){
+			if ($("#emailSelect").val() == "")
+			{
+				$("#email_domain").focus();
+				if ($("#email_domain").val() != "")
+				{
+					$("#email_domain").val("");
+				}
+			}
+			else
+			{
+				$("#email_domain").val( $("#emailSelect").val() );
+			}
         });
 
-        function deleteAnnouncements(id) {
-            announcements = announcement.filter(ann => ann.id !== id);
-            updateAnnouncementsList();
-        }
+		function newsApplywrite()
+		{
+			var f = document.newsApply;	
+			f.mode.value = "insert";
 
-        function updateannouncements() {
-            list.innerHTML = announcements.map(ann => `
-                <tr>
-                    <td>${ann.id}</td>
-                    <td>${ann.title}</td>
-                    <td>${ann.content}</td>
-                    <td>${ann.date}</td>
-                    <td><button class="delete-button" onclick="deleteAnnouncement(${ann.id})">삭제</button></td>
-                </tr>
-            `).join('');
-        }
+			if (f.P_name.value == "")
+			{
+				alert("이름을 입력해 주시기 바랍니다.");
+				f.P_name.focus();
+				return false;
+			}
 
-        // 자동 스크롤로 공지사항으로 이동
-        document.addEventListener('DOMContentLoaded', () => {
-            window.location.hash = '#announcements';
-        });
-    </script>
+			if (f.P_email.value == "")
+			{
+				alert("이메일주소를 입력해 주시기 바랍니다.");
+				f.P_email.focus();
+				return false;
+			}
 
+			if (f.P_email_domain.value == "")
+			{
+				alert("이메일주소를 입력해 주시기 바랍니다.");
+				f.P_email_domain.focus();
+				return false;
+			}
 
-    <section id="donation" class="donation">
-        <h2>후원으로 생명을 살리고 건강하고 밝은 내일을 선물하세요</h2>
-        <p>소중한 후원금은 취약계층의 의료접근성을 높이기 위한 의료환경 개선에 사용됩니다.</p>
-        <h3>기부 방법</h3>
-        <ul>
-            <li><strong>온라인 기부:</strong> [PayPal, Stripe 등 링크]</li>
-            <li><strong>은행 계좌 이체:</strong> [계좌 정보]</li>
-            <li><strong>물품 기부:</strong> 의약품, 의료 장비, 교육 자료 환영.</li>
-        </ul>
+			if ($("#agree").is(":checked") == false)
+			{
+				alert("개인정보 수집 및 이용에 동의해 주시기 바랍니다.");
+				$("#agree").focus();
+				return false;
+			}
 
-        <h3>후원자 감사 메시지</h3>
-        <p>"후원자 여러분의 지원 덕분에 우리는 지속 가능한 변화를 만들어가고 있습니다. 여러분의 기부는 생명을 구합니다."</p>
-    </section>
-
-    <section id="contact">
-        <h2>연락처</h2>
-        <ul>
-            <li><strong>이메일:</strong> contact@globalhealthpartners.org</li>
-            <li><strong>전화번호:</strong> +82-10-1234-5678</li>
-            <li><strong>사무실 주소:</strong> 서울시 강남구 테헤란로 123, 4층</li>
-        </ul>
-
-        <h3>소셜 미디어</h3>
-        <ul>
-            <li><strong>Facebook:</strong> [링크]</li>
-            <li><strong>Instagram:</strong> [링크]</li>
-            <li><strong>Twitter:</strong> [링크]</li>
-        </ul>
-
-        <h3>문의 양식</h3>
-        <form>
-            <label for="name">이름:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">이메일:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">메시지:</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
-
-            <button type="submit">보내기</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Global Health Partners. All rights reserved. | <a href="#">Privacy Policy</a></p>
-    </footer>
-
-    <script>
-        let currentLanguage = 'ko';
-
-        function toggleLanguage() {
-           currentLanguage = currentLanguage === 'ko' ? 'en' : 'ko';
-           setLanguage(currentLanguage);
-
-           // Update button text
-           document.getElementById('toggle-language').textContent = currentLanguage === 'ko' ? 'KO' : 'EN';
-        }
-
-            const langData = elements[lang];
-
-            if (langData) {
-                document.getElementById('header-description').textContent = langData['header-description'];
-                document.getElementById('education-title').textContent = langData['education-title'];
-                document.getElementById('education-description').textContent = langData['education-description'];
-
-                const educationList = document.getElementById('education-list');
-                educationList.innerHTML = '';
-                langData['education-list'].forEach(item => {
-                    const li = document.createElement('li');
-                    li.textContent = item;
-                    educationList.appendChild(li);
-                });
-
-                // Update navigation bar
-                document.getElementById('nav-home').textContent = langData['nav-home'];
-                document.getElementById('nav-about').textContent = langData['nav-about'];
-                document.getElementById('nav-projects').textContent = langData['nav-projects'];
-                document.getElementById('nav-education').textContent = langData['nav-education'];
-                document.getElementById('nav-announcement').textContent = langData['nav-announcement'];
-                document.getElementById('nav-donation').textContent = langData['nav-donation'];
-                document.getElementById('nav-contact').textContent = langData['nav-contact'];
-            }
-        }
-        
-        // Set default language on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            setLanguage(currentLanguage);
-        });
-    </section>
-    <section id="contact">
-        <h2>문의하기</h2>
-        <form>
-            <label>이름</label>
-            <input type="text" required>
-            <label>이메일</label>
-            <input type="email" required>
-            <label>메시지</label>
-            <textarea required></textarea>
-            <button type="submit">전송하기</button>
-        </form>
-    </section>
-    <footer>
-        <p>© 2025 글로벌헬스파트너스. All Rights Reserved.</p>
-    </footer>
-    <script>
-        function toggleLanguage() {
-            const elements = document.querySelectorAll('.lang');
-            const switchButton = document.querySelector('.language-switch');
-            const isKorean = switchButton.innerText === "EN";
-            switchButton.innerText = isKorean ? "KO" : "EN";
-            elements.forEach(el => {
-                el.innerText = isKorean ? el.dataset.en : el.dataset.ko;
-            });
-        }
-       
-    </script>
-</body>
+			if (!confirm("뉴스레터를 신청 하시겠습니까?"))
+			{
+				return false;
+			}
+		}
+	</script>
+</div>
+<footer id="footer">
+	<div class="contents"> 
+		<div class="addrWrap">
+			<ul class="addrNavList">
+				<li class="addrListView pcVersionMore"><a href="javascript:desktopMode();">PC버전</a></li>
+				<li class="addrListView"><a href="web_basic/introduce/introduce.php?pagen=212">오시는길</a></li>
+				<li><a href="web_basic/etc/etc.php?pagen=376">사이트맵</a></li>
+				<li><a href="web_basic/etc/etc.php?pagen=377">이용약관</a></li>
+				<li><a href="web_basic/etc/etc.php?pagen=378">개인정보처리방침</a></li>
+				<li><a href="web_basic/etc/etc.php?pagen=379">이메일무단수집거부</a></li>
+				<li><a href="javascript:;" onclick="open('https://mrmweb.hsit.co.kr/v2/default.aspx?Server=mKyKRXgHGO9LVrt7PllNmg==&action=receipt','',',scrollbars=yes,top=0,left=0,status=no,resizable=no,menubar=no,width=1050,height=700')">기부금영수증</a></li>
+				<li class="addrListView"><a href="web_basic/board/list.php?pagen=299">뉴스레터 신청</a></li>
+			</ul>
+			<div class="addrCont">
+				<p class="addrBasicText">지구촌나눔운동은 유엔 경제사회이사회(UN ECOSOC) 특별협의지위를 획득한 국제개발 NGO입니다.</p>
+				<p>후원계좌: 국민은행 009-01-1330-421(예금주: 지구촌나눔운동)</p>
+				<p>단체명: 사단법인 지구촌나눔운동 <span class="pcView">l</span><br class="mobileView" /> 사업자등록번호: 101-82-06676 <span class="pcView">l</span><br class="mobileView" /> 대표자: 김혜경</p>
+				<p>(우)03131 서울 종로구 율곡로 84 가든타워 803호 <span class="pcView">l</span><br class="mobileView" /> 대표전화: (02)747-7044 l 팩스: (02)747-7046 <span class="pcView">l</span><br class="mobileView" /> 이메일: gcskorea@gcs.or.kr</p>
+				<div class="partnerList">
+					<p class="partnerText">지구촌나눔운동과 함께하는 파트너</p>
+					<ul>
+						<li><a href="https://www.nts.go.kr/" target="_blank"><img src="web_basic/img/common/footer_partner_logo01.jpg" alt="국세청" /></a></li>
+						<li><a href="https://www.mofa.go.kr" target="_blank"><img src="web_basic/img/common/footer_partner_logo02.jpg" alt="외교부" /></a></li>
+						<li><a href="https://www.moef.go.kr/" target="_blank"><img src="web_basic/img/common/footer_partner_logo03.jpg" alt="개획재정부" /></a></li>
+					</ul>
+				</div>
+				<p class="copy">Copyright &copy; 지구촌나눔운동 All Rights Reserved.</p>
+			</div>
+		</div>
+		<div class="snsList">
+			<ul>
+				<li><a href="https://www.youtube.com/channel/UCD04RGWtbuq40qXQfpf71Ew/videos" target="_blank"><img src="web_basic/img/common/sns_youtube.png" alt="youtube" /></a></li>
+				<li><a href="https://www.facebook.com/gcskorea" target="_blank"><img src="web_basic/img/common/sns_facebook.png" alt="facebook" /></a></li>
+				<li><a href="https://www.instagram.com/gcs_korea" target="_blank"><img src="web_basic/img/common/sns_instagram.png" alt="instagram" /></a></li>
+				<li><a href="https://happylog.naver.com/hlog/gcs/home" target="_blank"><img src="web_basic/img/common/sns_happybean.png" alt="happybean" /></a></li>
+				<li><a href="http://blog.naver.com/gcsblog" target="_blank"><img src="web_basic/img/common/sns_blog.png" alt="blog" /></a></li>
+				<li><a href="https://pf.kakao.com/_DJxbxcT" target="_blank"><img src="web_basic/img/common/sns_kakaoch.png" alt="kakaoch" /></a></li>
+			</ul>
+		</div>
+		<p class="footerLogo"><img src="web_basic/img/common/footer_logo.png" alt="지구촌나눔운동 로고" /></p>
+	</div>
+</footer>
+<script type="text/javascript" src="https://wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "220562289d0c68";
+if(window.wcs) {
+wcs_do();
+}
+</script></body>
 </html>
