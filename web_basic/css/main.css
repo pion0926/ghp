@@ -23,8 +23,8 @@
 .reportCont .textCont ul li{background:#00afb1;display:flex;border-radius:5px;margin-right:24px;}
 .reportCont .textCont ul li a{width:240px;height:150px;font-size:2rem;font-weight:700;color:#fff;position:relative;padding:18px 0 20px 20px;}
 .reportCont .textCont ul li a span{position:absolute;right:19px;bottom:20px;}
-.reportCont .textCont ul li.annualBox a{background:url(../web_basic/img/main/annual_icon.gif) no-repeat left 28px bottom 23px;}
-.reportCont .textCont ul li.financeBox a{background:url(../web_basic/img/main/finance_icon.gif) no-repeat left 21px bottom 20px;}
+.reportCont .textCont ul li.annualBox a{background:url(/web_basic/img/main/annual_icon.png) no-repeat left 28px bottom 23px;}
+.reportCont .textCont ul li.financeBox a{background:url(/web_basic/img/main/finance_icon.gif) no-repeat left 21px bottom 20px;}
 .reportCont .graphCont{text-align:center;}
 .reportCont .graphCont p{font-size:2rem;color:#737373;margin-top:20px;line-height:1.3;}
 
@@ -47,7 +47,7 @@
 .newsList .btnMore{position:absolute;right:5px;top:17px;font-size:2rem;}
 .newsList .btnMore img{vertical-align:-2px;margin-left:10px;}
 
-.manifesto{background:url(../web_basic/img/main/manifesto_bg.jpg) no-repeat center top/cover;padding:100px 0;}
+.manifesto{background:url(/web_basic/img/main/manifesto_bg.jpg) no-repeat center top/cover;padding:100px 0;}
 .manifesto .contents{position:relative;display:flex;justify-content:flex-end;}
 .manifesto .titleLine{margin-bottom:5px;}
 .manifesto .contents .youtubeCont{position:absolute;left:0;top:40px;}

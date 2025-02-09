@@ -9,7 +9,7 @@
 #header .topBtnList .memberList li:first-child:before{display:none;}
 #header .topBtnList .memberList li:before{width:1px;height:14px;position:absolute;left:0;top:6px;background:#414141;content:"";}
 #header .topBtnList .langList{position:relative;margin-left:22px;}
-#header .topBtnList .langList select{width:94px;height:36px;padding-left:10px;color:#01afb1;border:1px solid #00afb1;outline:none;border-radius:5px;cursor:pointer;background:url(../web_basic/img/common/lang_arrow.gif) no-repeat right 15px top 15px;}
+#header .topBtnList .langList select{width:94px;height:36px;padding-left:10px;color:#01afb1;border:1px solid #00afb1;outline:none;border-radius:5px;cursor:pointer;background:url(/web_basic/img/common/lang_arrow.gif) no-repeat right 15px top 15px;}
 #header .topBtnList .langList p{width:94px;height:36px;text-align:center;line-height:32px;color:#01afb1;border:1px solid #00afb1;border-radius:5px;cursor:pointer;}
 #header .topBtnList .langList p img{vertical-align:middle;margin-left:5px;}
 #header .topBtnList .langList ul{width:100%;position:absolute;left:0;top:35px;border:1px solid #00afb1;border-radius:5px;display:none;}
@@ -54,8 +54,8 @@
 .allNavView .allNavCont #gnb > li:nth-child(1){}
 .allNavView .allNavCont #gnb li ul{padding:0 10px 20px 10px;}
 .allNavView .allNavCont #gnb li ul li{padding:3px 0;}
-.allNavView .allNavCont #gnb li span a{color:#414141;background:url(../web_basic/img/common/all_nav_arrow_off.png) no-repeat right 15px center;font-weight:500;font-size:1.6rem;line-height:20px;display:block;padding:15px;}
-.allNavView .allNavCont #gnb li span a.allTitleActive{color:#00afb1;border-bottom:1px solid #e8e8e8;background:url(../web_basic/img/common/all_nav_arrow_on.png) no-repeat right 15px center;}
+.allNavView .allNavCont #gnb li span a{color:#414141;background:url(/web_basic/img/common/all_nav_arrow_off.png) no-repeat right 15px center;font-weight:500;font-size:1.6rem;line-height:20px;display:block;padding:15px;}
+.allNavView .allNavCont #gnb li span a.allTitleActive{color:#00afb1;border-bottom:1px solid #e8e8e8;background:url(/web_basic/img/common/all_nav_arrow_on.png) no-repeat right 15px center;}
 .allNavView .allNavCont #gnb li .depth{display:none;border-bottom:1px solid #e8e8e8;margin-top:10px;}
 .allNavView .allNavCont #gnb li .depth a{font-size:1.4rem;color:#919191;position:relative;padding-left:10px;display:block;}
 .allNavView .allNavCont #gnb li .depth a:hover{color:#00afb1;}

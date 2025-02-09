@@ -1,0 +1,157 @@
+@charset "utf-8";
+@import url('//fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+/* 초기화 */
+html, body{}
+html {overflow-y:scroll;overflow-x:hidden;font-size:10px}
+body {margin:0;padding:0;font-size:1.6rem;font-family:'Noto Sans KR', sans-serif;color:#414141;}
+html, h1, h2, h3, h4, h5, h6, form, fieldset, img, table, th, td {margin:0;padding:0;border:0}
+h1, h2, h3, h4, h5, h6 {font-weight:normal}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
+ul,ol,dl,dt,dd {margin:0;padding:0;list-style:none}
+em,i,address{font-style:normal;font-weight:normal}
+legend {position:absolute;margin:0;padding:0;font-size:0;line-height:0;text-indent:-9999em;overflow:hidden}
+label, input, button, select{vertical-align:middle}
+img{max-width:100%;vertical-align:top}
+input, button {margin:0;padding:0}
+input,textarea {-webkit-appearance: none;-webkit-border-radius: 0}
+input, select, textarea{border-radius:0;appearance:none;-webkit-appearance:none}
+select{padding-left:10px}
+input[type="checkbox"] {-webkit-appearance:checkbox; -moz-appearance:checkbox}
+input[type="radio"] {-webkit-appearance:radio; -moz-appearance:radio}
+input[type="submit"] {cursor:pointer}
+table{border-collapse:collapse;border-spacing:0;border:0}
+button {cursor:pointer;font-family:'Noto Sans KR', sans-serif}
+legend,caption{display:none;clear:both}
+input,textarea,select,button,table{font-size:inherit;font-family:inherit;line-height:inherit}
+/*select {-webkit-appearance: none;-moz-appearance:none;appearance:none}
+select::-ms-expand {display:none;}*/
+label{cursor:pointer}
+.hide{display:none !important}
+.skip{position:absolute;text-indent:-1000em;letter-spacing:-1000em;}
+.sknavi:focus, .sknavi:active{width:200px;display:block;background-color:#eee;border:1px solid #113355;font-size:100%;font-weight:bold;margin-left:5px;padding:3px;text-align:center;text-decoration:none;top:1px}
+.sknavi {position:absolute;top:-500px;z-index:999}
+.vh_hide {height:0;width:0px;font-size:0;line-height:0;visibility:hidden;overflow:hidden;}
+.lhide {height:0;width:0px;font-size:0;line-height:0;visibility:hidden;overflow:hidden; position:absolute; top:-20000px; left:-20000px;}
+
+select {margin:0}
+p {margin:0;padding:0;/*word-break:break-all*/}
+hr {display:none}
+pre {overflow-x:scroll;font-size:1.1em}
+a {color:inherit;text-decoration:none}
+.tel{cursor:auto;}
+.none{display:none !important;}
+*, :after, :before {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+}
+
+input[type=text],input[type=password], textarea {
+border:1px solid #bdbdbd;
+outline:none;
+}
+
+input[type=text],input[type=password]{
+text-indent:10px;
+}
+
+input[type=text]:focus,input[type=password]:focus, textarea:focus,select:focus{border:1px solid #bdbdbd;}
+
+.textHidden{font-size:0;letter-spacing:-1000em;text-indent:-1000em;line-height:0;}
+
+
+/* padding */
+.pdB_0{padding-bottom: 0!important;}
+
+/* align */
+.alignR{text-align:right !important}
+.alignC{text-align:center !important}
+.alignL{text-align:left !important}
+
+/* loading */
+.viewLoading{width:100%;height:100%;position:fixed;display:none;left:0;top:0;z-index:9999;background:#fff;opacity:.7;filter:alpha(opacity=70);-moz-opacity:0.70;-khtml-opacity:0.70;}
+.viewLoading span{position:fixed;left:50%;top:50%;margin-left:-22px;margin-top:-22px;}
+
+/* fontSize */
+.fs7{font-size:0.7rem;}
+
+/* Font */
+.fw500{font-weight:500;}
+
+/* Etc */
+.etcPopBox{position:relative;font-size:16px}
+.etcPopBox h2{background:#2c62b3;color:#fff;padding:20px;font-weight:bold;}
+.etcPopBox .etcPopBoxCont{box-sizing:border-box;border:1px solid #ddd;padding:20px;margin:10px}
+.etcPopBox .etcPopBoxCont dl{padding-bottom:20px;}
+.etcPopBox .etcPopBoxCont dl dt{font-weight:bold;padding-bottom:5px;}
+.etcPopBox .etcPopBoxCont dl dd{position:relative;padding-left:10px;line-height:24px;}
+.etcPopBox .etcPopBoxCont dl dd > ol{margin-top:10px;}
+.etcPopBox .etcPopBoxCont dl dd > ol > li{margin-bottom:10px;}
+.etcPopBox .etcPopBoxCont dl dd > ol > li:last-child{margin-bottom:0;}
+.etcPopBox .btn_close{position:absolute;right:10px;top:17px;background:none;border:0;}
+.etcPopBox .etcPopBoxCont dl dd .etcUseList li{margin-bottom:;}
+.etcPopBox .etcPopBoxCont dl dd .etcUseList{}
+.etcPopBox .etcPopBoxCont dl dd .etcUseList li:nth-child(3), .etcPopBox .etcPopBoxCont dl dd .etcUseList li:nth-child(n+6){margin-bottom:10px;}
+.etcPopBox .etcPopBoxCont dl dd .etcUseList li:last-child{margin-bottom:50px;}
+
+
+/* Title */
+.titleLine{font-size:3.2rem;font-weight:700;color:#414141;position:relative;}
+.titleLine:before{width:40px;height:4px;background:#00afb1;border-radius:3px;position:absolute;left:0;top:-9px;content:"";}
+.titleLine span{color:#00afb1;}
+
+/* 소식 > 뉴스레터 */
+.newsLetterForm .titleLine{margin-bottom:20px;}
+.newsLetterForm .titleLine img{vertical-align:0;}
+.newsLetterForm .formCont .formBox{display:flex;justify-content:space-between;align-items:flex-end;}
+.newsLetterForm .formCont .formBox input[type="text"],
+.newsLetterForm .formCont .formBox select{height:56px;font-weight:400;font-size:2rem;border:1px solid #bebebe;border-radius:5px;vertical-align:top;color:#919191;appearance:auto;-webkit-appearance:auto;}
+.newsLetterForm .formCont .formBox input[type="text"]::placeholder{color:#919191;}
+.newsLetterForm .formCont .formBox .nameCont{width:240px;}
+.newsLetterForm .formCont .formBox .nameCont input{width:100%;padding-left:10px;}
+.newsLetterForm .formCont .formBox .emailCont{width:780px;}
+.newsLetterForm .formCont .formBox .emailCont input{width:30%;}
+.newsLetterForm .formCont .formBox .emailCont select{width:34%;}
+.newsLetterForm .formCont .formBox .emailCont span{width:5%;display:inline-block;text-align:center;font-size:2.8rem;}
+.newsLetterForm .formCont .formBox dl dt{font-size:2rem;margin-bottom:1px;}
+.newsLetterForm .formCont .agree{text-align:right;margin-top:20px;}
+.newsLetterForm .formCont .agree label{margin-right:5px;}
+.newsLetterForm .formCont .agree img{vertical-align:middle;margin-left:13px;}
+
+.pcView{display:inline-block;}
+.mobileView{display:none;}
+@media screen and (max-width:1279px) {
+html{font-size:9px}
+
+/* 소식 > 뉴스레터 */
+.newsLetterForm .contents{padding:0;}
+.newsLetterForm .formCont .formBox .nameCont{margin-right:10px;}
+}
+
+@media screen and (max-width:979px) {
+html{font-size:8.5px}
+}
+
+@media screen and (max-width:767px) {
+html{font-size:8px}
+.pcView{display:none;}
+.mobileView{display:inline-block;}
+
+.newsLetterForm .formCont{position:relative;}
+.newsLetterForm .formCont .formBox{display:block;}
+.newsLetterForm .formCont .formBox input[type="text"],
+.newsLetterForm .formCont .formBox select{height:45px;}
+.newsLetterForm .formCont .formBox dl{margin-bottom:15px;}
+.newsLetterForm .formCont .formBox dl dt{margin-bottom:10px;font-weight:700;}
+.newsLetterForm .formCont .formBox .nameCont{width:100%;}
+.newsLetterForm .formCont .formBox .emailCont{width:100%;}
+.newsLetterForm .formCont .formBox .btnSubmit{text-align:center;margin-top:60px;}
+.newsLetterForm .formCont .formBox .btnSubmit input{width:100px;}
+.newsLetterForm .formCont .agree{width:100%;position:absolute;bottom:60px;text-align:center;}
+}
+
+@media screen and (max-width:517px) {
+html{font-size:7px}
+}
+
