@@ -1,0 +1,133 @@
+.reportCont {
+    padding: 80px 0;
+    background-color: #f8f9fa;
+}
+
+.report-wrapper {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.textCont {
+    flex: 1;
+}
+
+.report-header {
+    margin-bottom: 30px;
+}
+
+.report-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.report-subtitle {
+    font-size: 20px;
+    color: #34495e;
+    font-weight: 500;
+}
+
+.report-description {
+    margin-bottom: 40px;
+}
+
+.report-description p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.report-links {
+    margin-top: 30px;
+}
+
+.report-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.report-link:hover {
+    background-color: #2980b9;
+}
+
+.link-text {
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.link-icon img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.graphCont {
+    flex: 1;
+    text-align: center;
+}
+
+.graph-wrapper {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.imgBox {
+    margin-bottom: 20px;
+}
+
+.imgBox img {
+    max-width: 100%;
+    height: auto;
+}
+
+.graph-text {
+    padding: 20px 0;
+}
+
+.graph-text .highlight {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.graph-text .emphasis {
+    font-size: 24px;
+    font-weight: 600;
+    color: #3498db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .report-wrapper {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .report-title {
+        font-size: 28px;
+    }
+
+    .report-subtitle {
+        font-size: 18px;
+    }
+
+    .graph-wrapper {
+        padding: 30px 20px;
+    }
+}
