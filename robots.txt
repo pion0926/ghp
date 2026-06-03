@@ -1,0 +1,24 @@
+# START ROBOTS.TXT
+# This file tells search engine crawlers which areas of the website they can access.
+
+User-agent: *
+# The asterisk (*) means these rules apply to all crawlers (bots).
+Allow: /
+# "Allow: /" explicitly states that crawlers can access everything starting from the root directory.
+# If you have nothing specific to block, this is often safer and clearer than an empty "Disallow:".
+
+# You can add specific rules for different bots if needed, but "*" covers most cases.
+# Example for Naver's bot (Yeti):
+# User-agent: Yeti
+# Allow: /
+
+# Example for Google's bot:
+# User-agent: Googlebot
+# Allow: /
+
+# --- Sitemap Location ---
+# It's important to tell crawlers where your XML sitemap is located.
+# Replace the URL below with the actual URL of YOUR sitemap.
+Sitemap: https://www.yourwebsite.com/sitemap.xml
+
+# END ROBOTS.TXT

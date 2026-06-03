@@ -1,0 +1,179 @@
+<?php 
+require_once "../include/admin_check.php"; 
+include "../include/db_connect.php"; 
+include "../include/header.php"; 
+
+$default_author = '관리자';
+?>
+
+<!-- CKEditor 5 (무료 최신 버전) -->
+<script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
+
+<div id="news" class="wrap">
+    <div class="subTop">
+        <div class="pageGroup"><h2>뉴스</h2></div>
+        <div id="lnb">
+            <a href="#">글 작성</a> 
+            <div class="depth2">
+                <ul>
+                    <li class="active"><a href="/web_basic/board/list.php?section=news&pagen=299">뉴스 작성</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section id="container" class="news write">
+        <div class="contents page_write">
+            <div class="boardWrap">
+                <h3>뉴스 작성</h3>
+                <form method="POST" action="write_news_process.php" enctype="multipart/form-data" onsubmit="return validateFormAndSync()">
+                    <table class="boardWrite">
+                        <colgroup>
+                            <col style="width: 15%;">
+                            <col style="width: 85%;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row"><label for="author">작성자</label></th>
+                                <td><input type="text" name="author" id="author" value="<?php echo $default_author; ?>" required readonly class="input-text"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="title">제목</label></th>
+                                <td><input type="text" name="title" id="title" placeholder="제목을 입력하세요" required class="input-text" style="width: 98%;"></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="summary">요약문</label></th>
+                                <td><textarea name="summary" id="summary" rows="4" placeholder="간단한 요약을 입력하세요" required class="textarea" style="width: 98%;"></textarea></td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="content">내용</label></th>
+                                <td>
+                                    <textarea name="content" id="content" rows="15" class="textarea" style="width: 98%;"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row"><label for="thumbnail">썸네일 이미지</label></th>
+                                <td>
+                                    <input type="file" name="thumbnail" id="thumbnail" class="input-file" accept="image/*"> 
+                                    <p class="form-hint">썸네일 이미지를 선택하세요. (JPG, PNG, GIF 등)</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="btnWrap right">
+                        <button type="submit" class="btnSubmit">작성 완료</button>
+                        <a href="/web_basic/board/list.php?pagen=299" class="btnCancel">취소</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script>
+let myEditor;
+ClassicEditor
+    .create(document.querySelector('#content'), {
+        extraPlugins: [CustomUploadAdapterPlugin]
+    })
+    .then(editor => {
+        editor.editing.view.change(writer => {
+            const root = editor.editing.view.document.getRoot();
+            writer.setStyle('font-size', '16px', root);
+            writer.setStyle('line-height', '1.6', root);
+            writer.setStyle('min-height', '300px', root);
+        });
+    })
+    .catch(error => console.error(error));
+
+function validateFormAndSync() {
+    // CKEditor의 데이터를 textarea로 동기화
+    document.querySelector('#content').value = myEditor.getData();
+
+    const title = document.getElementById('title').value.trim();
+    const summary = document.getElementById('summary').value.trim();
+    const content = myEditor.getData().trim(); // 에디터 내부 값
+
+    if (title === '' || summary === '' || content === '') {
+        alert('제목, 요약문, 내용을 모두 입력해주세요.');
+        // 포커스 이동 (원하는 필드에)
+        if (title === '') document.getElementById('title').focus();
+        else if (summary === '') document.getElementById('summary').focus();
+        // else CKEditor는 직접 포커스 힘드니 alert로만 안내
+        return false;
+    }
+    return true;
+}
+
+// ✅ 커스텀 업로드 어댑터 플러그인 정의
+function CustomUploadAdapterPlugin(editor) {
+    editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+        return new MyUploadAdapter(loader);
+    };
+}
+
+// ✅ 업로드 어댑터 클래스
+class MyUploadAdapter {
+    constructor(loader) {
+        this.loader = loader;
+    }
+
+    upload() {
+        return this.loader.file.then(file => {
+            return new Promise((resolve, reject) => {
+                const data = new FormData();
+                data.append('upload', file);
+
+                fetch('/web_basic/board/upload.php', {
+                    method: 'POST',
+                    body: data
+                })
+                .then(response => response.json())
+                .then(result => {
+                    if (result.url) {
+                        resolve({ default: result.url });
+                    } else {
+                        reject(result.error?.message || '업로드 실패');
+                    }
+                })
+                .catch(error => {
+                    reject('서버 에러: ' + error.message);
+                });
+            });
+        });
+    }
+
+    abort() {
+        // 중단 로직은 선택사항
+    }
+}
+
+function validateForm() {
+    const title = document.getElementById('title').value.trim();
+    const summary = document.getElementById('summary').value.trim();
+    const content = document.querySelector('#content').value;
+
+    if (title === '' || summary === '') {
+        alert('제목과 요약문을 모두 입력해주세요.');
+        return false;
+    }
+    return true;
+}
+</script>
+
+<style>
+/* 동일한 스타일 유지 (생략 가능) */
+.boardWrite { width: 100%; border-top: 2px solid #2c5282; border-collapse: collapse; margin-bottom: 30px; }
+.boardWrite th, .boardWrite td { padding: 15px; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+.boardWrite th { background-color: #f8fafc; text-align: left; font-weight: 600; color: #4a5568; }
+.input-text, .textarea, .input-file { padding: 8px 10px; border: 1px solid #cbd5e0; border-radius: 4px; font-size: 14px; box-sizing: border-box; }
+.btnWrap.right { text-align: right; margin-top: 20px; }
+.btnWrap button, .btnWrap a { display: inline-block; padding: 10px 20px; margin-left: 10px; border-radius: 4px; font-size: 14px; text-decoration: none; cursor: pointer; }
+.btnSubmit { background-color: #2c5282; color: white; border: 1px solid #2c5282; }
+.btnSubmit:hover { background-color: #2b6cb0; }
+.btnCancel { background-color: #6c757d; color: white; border: 1px solid #6c757d; }
+.btnCancel:hover { background-color: #5a6268; }
+</style>
+
+<?php include "../include/footer.php"; ?>

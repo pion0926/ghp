@@ -8,8 +8,24 @@
 .topLine:before{width:400px;height:2px;background:#99dadd;position:absolute;top:0;left:50%;transform:translateX(-50%);content:'';}
 .topLine.topLineFull:before{width:100%;}
 .sectionTop{padding-bottom:45px;}
-.shotLine{position:relative;padding-top:10px;}
-.shotLine:before{width:40px;height:4px;background:#00afb1;position:absolute;top:0;left:0;content:'';border-radius:30px; }
+.shotLine {
+  position: relative;
+  text-align: center;
+  font-size: 2rem;
+  margin: 40px 0;
+}
+
+.shotLine:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -20px; /* 위에 위치 조정 */
+  width: 40px;
+  height: 4px;
+  background: #00afb1;
+  border-radius: 30px;
+}
 .sectionTitleSolo{margin-bottom:47px;}
 
 .bg_f2fafb{position:relative;}
@@ -141,7 +157,7 @@ label{vertical-align:-2px;margin:0 7px 0 3px;}
 .halfCont > .imgBox, .halfCont > dl{width:600px;}
 .halfCont > dl{padding:40px 0 0 77px; }
 .halfCont > dl dd{font-size:2.4rem;line-height:1.5;margin-top:14px;padding-left:3px;}
-.halfNumList{font-size:2rem;}
+.halfNumList{font-size:2rem; margin: 10px 0;}
 .halfNumList li{display:flex;align-items:baseline;margin-bottom:10px;}
 .halfNumList li:last-child{margin-bottom:0;}
 .halfNumList li .numberSpan{width:23px;height:23px;line-height:23px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.6rem;border-radius:50%;background:#00afb1;color:#fff;margin-right:9px;}
@@ -156,11 +172,37 @@ label{vertical-align:-2px;margin:0 7px 0 3px;}
 .iconList li > .imgBox img{margin-bottom:18px;}
 .iconList li dl dt{font-size:2.2rem;font-weight:bold;margin:11px 0 14px;}
 .iconList li dl dd, .iconList li > .basicText{font-size:1.8rem;line-height:1.667;}
-.ciList{display:flex;flex-wrap:wrap;justify-content:space-between;margin-bottom:40px;}
-.ciList li{font-size:2.4rem;font-weight:bold;}
-.ciList li > .imgBox{margin:11px 0 15px;}
-.ciList li .btnCi{text-align:right;}
-.ciList li .btnCi a{display:inline-block;margin-left:12px;}
+.ciList {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+  margin: 40px 0;
+}
+
+.ciList li {
+  flex: 0 0 auto;
+  width: 300px;
+  text-align: center;
+}
+
+.ciList .imgBox img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.btnCi {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
 .ciCont dl{margin-top:40px;}
 .ciCont dl:nth-of-type(1){margin-top:0;}
 .ciCont dl dt{font-size:2.4rem;font-weight:bold;margin-bottom:2px;}
@@ -290,8 +332,8 @@ label{vertical-align:-2px;margin:0 7px 0 3px;}
 .halfCont.zigzagCont .halfNumList{font-size:1.8rem;margin-top:23px;color:#00afb1;}
 .halfCont.zigzagCont .halfNumList li{margin-bottom:17px;}
 .halfCont.zigzagCont .halfNumList li .numberSpan{width:20px;height:20px;line-height:20px;}
-.halfCont.zigzagCont:nth-child(2n) > .imgBox{order:1;}
-.halfCont.zigzagCont:nth-child(2n) > dl{padding-left:0;padding-right:20px;order:0;}
+.halfCont.zigzagCont:nth-child(2n) > .imgBox{order:0;}
+.halfCont.zigzagCont:nth-child(2n) > dl{padding-left:0;padding-right:20px;order:1;}
 .school .sectionTitleSub{line-height:1.2;margin-top:7px;}
 
 /* 사업안내 > 지구촌봉사단 */
@@ -418,7 +460,7 @@ label{vertical-align:-2px;margin:0 7px 0 3px;}
  
 /* KOICA 중기봉사단_20240521 추가 */
 .koicaWrap{padding-bottom:100px;}
-.koicaWrap .shotLine{font-size:2.6rem;letter-spacing:-0.04em;font-weight:700;}
+.koicaWrap .shotLine{font-size:2.6rem;letter-spacing:-0.04em;font-weight:700;text-align: center;}
 .koicaWrap .basicText{font-size:1.8rem;letter-spacing:-0.045em;line-height:1.778;}
 .koicaWrap .koicaTop{text-align:center;}
 .koicaWrap .koicaTop .topImg{position:relative;height:350px;display:flex;align-items:center;justify-content:center;}
@@ -594,7 +636,7 @@ label{vertical-align:-2px;margin:0 7px 0 3px;}
 .section{margin-top:50px;}
 .section.topLine{padding-top:50px;}
 .sectionTop{padding-bottom:22.5px;}
-.shotLine:before{width:32px;height:3px;}
+.shotLine:before{width:32px;height:3px;text-align: center;}
 .sectionTitleSolo{margin-bottom:23.5px;}
 
 .pictureList li{width:49%;}
@@ -741,7 +783,7 @@ input[type="radio"]{width:12px;height:12px;background-size:12px 12px;vertical-al
 .volunteerCharacteristic ul li dl dd{padding:8px 5px;}
 
 /* 후원하기 > 후원안내*/
-.sponsorFront .sponsorListDesign{margin-top:;}
+.sponsorFront .sponsorListDesign{margin-top:7.917%;}
 .sponsorFront .sponsorNeighborhood ul{margin-top:22px;}
 .sponsorFront .sponsorNeighborhood ul li{width:32%;}
 .sponsorFront .sponsorNeighborhood ul li > .imgBox img{width:130px;}
@@ -904,4 +946,30 @@ input[type="radio"]{width:12px;height:12px;background-size:12px 12px;vertical-al
 .koicaWrap .koicaQualification .qualificationBottom dl dd ul li:nth-child(3) .imgBox:after{bottom:-71.5px;}
 .koicaWrap .koicaQualification .qualificationBottom dl dd ul li:nth-child(6) .imgBox:after{bottom:-61.5px;}
 .koicaWrap .koicaQualification .qualificationBottom dl dd ul li .imgBox img{width:98px;}
+}
+
+.halfCont.zigzagCont {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.halfCont.zigzagCont > dl {
+    order: 0;
+}
+
+.halfCont.zigzagCont > .imgBox {
+    order: 1;
+}
+
+/* 짝수 번째 섹션에서는 이미지가 왼쪽으로 */
+.halfCont.zigzagCont:nth-child(2n) > .imgBox {
+    order: 0;
+}
+
+.halfCont.zigzagCont:nth-child(2n) > dl {
+    order: 1;
+    padding-left: 20px;
+    padding-right: 0;
 }

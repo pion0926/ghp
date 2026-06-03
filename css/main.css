@@ -1,0 +1,37 @@
+#container.main {
+    padding-top: 120px; /* Adjust based on your header height */
+}
+
+.mainBanner {
+    margin-top: 0; /* Remove previous margin */
+    position: relative;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; /* Ensure header stays above other content */
+    background: #fff; /* Add background to header */
+}
+
+.mainBannerBox {
+    width: 100%;
+}
+
+.mainBannerCont {
+    width: 100%;
+}
+
+.mainBannerCont picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.mainBannerCont img {
+    width: 100%;
+    height: auto;
+    display: block;
+} 
