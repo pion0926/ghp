@@ -104,7 +104,7 @@
                 <div class="ambassadorRow">
                     <div class="ambassadorItem photo">
                         <p class="imgBox">
-                        <img src="/web_basic/img/introduce/사본 -정애숙.png" alt="정애숙" />
+                        <img src="/web_basic/img/introduce/jung_aesook_chair.png" alt="정애숙" />
                         </p>
                         <dl>
                         <dt>정애숙 이사장</dt>
@@ -203,16 +203,33 @@
                 <div class="ambassadorRow">
                     <div class="ambassadorItem photo">
                         <p class="imgBox">
-                        <img src="/web_basic/img/introduce/정유미.png" alt="정유미" />
+                        <img src="/web_basic/img/introduce/shin_dongmin.png" alt="신동민" />
                         </p>
                         <dl>
-                        <dt>정유미 이사</dt>
+                        <dt>신동민 이사</dt>
                         </dl>
                     </div>
                     <div class="ambassadorItem text">
                         <dl>
                         <dt>
-                        국군간호사관학교를 졸업하고 서울대학교 간호대학원에서 간호학 석ㆍ박사학위를 취득하였습니다. 국군간호사관학교 교수로 재직하며 군건강정책연구소장, 교무처장, 임상간호학처장 등을 역임하였습니다. 2005년부터 지금까지 ‘구급간호교육(국군간호사관학교)’, ‘재난간호교육과정(국군간호사관학교’), ‘에볼라해외긴급구호팀 교육(보건복지부 등)’, ‘해외긴급구호팀 심화교육과정(한국국제보건의료재단)’ 등 재난교육 전문가로 활동하고 있습니다. 2020년부터 약 3년간 ‘XR 기반 중증외상처치훈련 프로그램’ 개발(과학기술정보통신부, 국방부)과 교육에 참여하였습니다. 한국재난간호사회 이사, 한국간호행정학회 이사를 역임하였고, 2025년 현재 한국통일평화간호학회 이사, 군디지털의료정책학회 이사 등으로 활동하고 있습니다. 
+                        국립한국교통대학교 응급구조학과 교수로, 미국 Ball State University에서 인간공학 석사, Auburn University에서 인간공학 박사 학위를 취득하였습니다. 미국연방정부 응급구조사로 활동하였으며, 국립한국교통대학교 보건생명대학장, 한국응급구조학회 회장, 응급구조학과 교수협의회 회장 등을 역임하였습니다. 현재 사단법인 응급구조사협회 자문위원, 소방청 119 구조구급 자문위원 및 정책위원, 국립한국교통대학교 국제협력선도대학육성지원사업단장으로 활동하며 응급구조, 심폐소생 교육, 보건의료 안전 분야 발전에 기여하고 있습니다.
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="ambassadorRow">
+                    <div class="ambassadorItem photo">
+                        <p class="imgBox">
+                        <img src="/web_basic/img/introduce/김신표.png" alt="김신표" />
+                        </p>
+                        <dl>
+                        <dt>김신표 이사</dt>
+                        </dl>
+                    </div>
+                    <div class="ambassadorItem text">
+                        <dl>
+                        <dt>
+                        ㈜한국경제예측연구소 대표이사이며, 계명대학교 경제학 박사와 국민대학교 e-비즈니스 경영정보학 박사 학위를 취득하였습니다. 홍익대학교 연구교수, 금오공과대학교 초빙교수를 역임하였으며, KOICA 등 국제개발협력 사업에서 네팔, 방글라데시, 탄자니아 등의 보건의료 프로젝트 경제성 분석을 담당하고 있습니다.
                         </dl>
                     </div>
                 </div>
@@ -231,22 +248,6 @@
                         <dt>
                         충북대학교에서 경제학 박사 학위를 취득한 경제학자로, 현재 충북대학교 강사이자 국제개발연구소 부소장으로 재직 중입니다. 과거 고려대학교 세종캠퍼스 강사와 미국 메릴랜드 대학교(College Park) 방문학자를 역임하였으며, 굿네이버스와 KOICA 등과 협력하여 키르기즈공화국, 베트남 등지에서 농촌개발 및 포용적 농촌개발 프로그램의 성과관리와 사업기획관리(PM) 업무를 수행하였습니다.                        
                         </dl>
-                    </div>
-                </div>
-
-                <div class="ambassadorRow">
-                    <div class="ambassadorItem photo">
-                        <p class="imgBox">
-                        <img src="/web_basic/img/introduce/김신표.png" alt="김신표" />
-                        </p>
-                        <dl>
-                        <dt>김신표 감사</dt>
-                        </dl>
-                    </div>
-                    <div class="ambassadorItem text">
-                        <dl>
-                        <dt>
-                        ㈜한국경제예측연구소 대표이사이며, 계명대학교 경제학 박사와 국민대학교 e-비즈니스 경영정보학 박사 학위를 취득하였습니다. 홍익대학교 연구교수, 금오공과대학교 초빙교수를 역임하였으며, KOICA 등 국제개발협력 사업에서 네팔, 방글라데시, 탄자니아 등의 보건의료 프로젝트 경제성 분석을 담당하고 있습니다.                        </dl>
                     </div>
                 </div>
 

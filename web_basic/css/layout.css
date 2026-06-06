@@ -628,4 +628,402 @@ img {
 
 #introduce .pageGroup{background-image:url(../img/sub_common/sub_visual_introduce.jpg);}
 
+/* Participation modal */
+body.modalOpen {
+  overflow: hidden;
+}
+
+.donationModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  padding: 24px;
+  background: rgba(10, 24, 38, 0.58);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.donationModal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donationModalPanel {
+  position: relative;
+  width: min(920px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  padding: 34px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.22);
+  box-sizing: border-box;
+}
+
+.donationModalClose {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: #f1f5f7;
+  color: #1f2f3d;
+  font-size: 2.8rem;
+  line-height: 34px;
+  cursor: pointer;
+}
+
+.donationModalHead {
+  padding-right: 42px;
+  margin-bottom: 24px;
+}
+
+.donationModalHead p {
+  margin: 0 0 8px;
+  color: #00afb1;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.donationModalHead h2 {
+  margin: 0;
+  color: #15212b;
+  font-size: 2.8rem;
+  line-height: 1.28;
+  font-weight: 800;
+}
+
+.donationModalHead span {
+  display: block;
+  margin-top: 10px;
+  color: #5f6f7c;
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.participationForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.memberTypeGrid,
+.amountChoiceGrid,
+.fieldGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.memberTypeCard,
+.amountChoice {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 86px;
+  padding: 18px;
+  border: 1px solid #d8e1e7;
+  border-radius: 8px;
+  background: #fff;
+  color: #273845;
+  text-align: left;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.memberTypeCard.active,
+.amountChoice.active {
+  border-color: #00afb1;
+  background: #eefafa;
+  box-shadow: inset 0 0 0 1px #00afb1;
+}
+
+.memberTypeCard strong,
+.amountChoice strong {
+  font-size: 2rem;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.memberTypeCard span,
+.amountChoice span {
+  margin-top: 6px;
+  color: #667783;
+  font-size: 1.4rem;
+  line-height: 1.45;
+}
+
+.amountChoice input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.participationOptions {
+  display: none;
+}
+
+.participationOptions.active {
+  display: block;
+}
+
+.formSectionTitle {
+  margin: 0 0 10px;
+  color: #182733;
+  font-size: 1.7rem;
+  font-weight: 800;
+}
+
+.sponsorAmountGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.customAmountField,
+.participantFields label,
+.paymentInfoBox label,
+.additionalInfoBox label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.customAmountField {
+  margin-top: 12px;
+}
+
+.customAmountField span,
+.participantFields label span,
+.paymentInfoBox label span,
+.additionalInfoBox label span {
+  color: #3b4d5b;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.customAmountField input,
+.participantFields input,
+.participantFields textarea,
+.paymentInfoBox input,
+.paymentInfoBox select,
+.additionalInfoBox select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 13px;
+  border: 1px solid #d6e0e6;
+  border-radius: 6px;
+  background: #fff;
+  color: #172631;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+}
+
+.participantFields textarea,
+.additionalInfoBox textarea {
+  width: 100%;
+  min-height: 92px;
+  border: 1px solid #d6e0e6;
+  border-radius: 6px;
+  color: #172631;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+  padding-top: 12px;
+  padding-left: 13px;
+  padding-right: 13px;
+  resize: vertical;
+}
+
+.paymentGuide {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid #d8e1e7;
+  border-radius: 8px;
+  background: #f7fbfb;
+}
+
+.paymentGuide div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.paymentGuide span {
+  color: #60717d;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.paymentGuide strong {
+  color: #142530;
+  font-size: 2rem;
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.paymentGuide em {
+  color: #60717d;
+  font-size: 1.4rem;
+  font-style: normal;
+}
+
+.participantFields,
+.additionalInfoBox,
+.paymentInfoBox,
+.memberCategoryBox,
+.receiptBox {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inlineRadioGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.inlineRadioGroup label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 42px;
+  padding: 0 14px;
+  border: 1px solid #d8e1e7;
+  border-radius: 6px;
+  background: #fff;
+  color: #2f4352;
+  font-size: 1.5rem;
+  font-weight: 700;
+  box-sizing: border-box;
+}
+
+.inlineRadioGroup input {
+  width: 15px;
+  height: 15px;
+}
+
+.fieldHelp {
+  margin: 0;
+  color: #667783;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.agreementBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #f6f8fa;
+}
+
+.agreementBox label {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #334653;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+.agreementBox input {
+  margin-top: 4px;
+}
+
+.participationMessage {
+  display: none;
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  line-height: 1.45;
+}
+
+.participationMessage.success {
+  display: block;
+  background: #eaf8f2;
+  color: #116343;
+}
+
+.participationMessage.error {
+  display: block;
+  background: #fff0f0;
+  color: #b42318;
+}
+
+.participationActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.participationActions button {
+  min-width: 126px;
+  height: 46px;
+  border: 0;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.participationActions .btnCancel {
+  background: #edf2f5;
+  color: #273845;
+}
+
+.participationActions .btnSubmit {
+  background: #00afb1;
+  color: #fff;
+}
+
+.participationActions .btnSubmit:disabled {
+  background: #8fcfd0;
+  cursor: wait;
+}
+
+@media screen and (max-width: 767px) {
+  .donationModal {
+    padding: 12px;
+  }
+
+  .donationModal.active {
+    align-items: flex-start;
+  }
+
+  .donationModalPanel {
+    max-height: calc(100vh - 24px);
+    padding: 24px 18px;
+  }
+
+  .donationModalHead h2 {
+    font-size: 2.3rem;
+  }
+
+  .memberTypeGrid,
+  .amountChoiceGrid,
+  .fieldGrid,
+  .paymentGuide {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsorAmountGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .participationActions {
+    flex-direction: column-reverse;
+  }
+
+  .participationActions button {
+    width: 100%;
+  }
+}
+
 /* imgViewer */

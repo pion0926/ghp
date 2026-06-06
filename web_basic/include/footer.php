@@ -13,7 +13,7 @@
             </ul>
 
             <div class="addrCont">
-                <p class="addrBasicText">글로벌헬스파트너스는 지구촌 누구도 소외되지 않는 건강한 삶을 지원하는 비영리 조직입니다.</p>
+                <p class="addrBasicText">글로벌헬스파트너스는 지구촌 누구도 소외되지 않는 건강한 삶을 지원하는 비영리 민간단체입니다.</p>
                 <p>후원계좌: 기업은행 695-031670-04-016(예금주: 글로벌헬스파트너스)</p>
                 <p>단체명: 글로벌헬스파트너스 l 고유번호증: 621-82-93641 l 대표자: 정애숙</p>
                 <p class="addrDetail">(우)28114 충북 청주시 흥덕구 옥산면 덕촌삼성골길 14 l 대표전화: (070)8019-3087</p>
@@ -34,11 +34,15 @@
                             "충북시민사회지원센터.png" => "http://www.cbngo.org/main.php",
                             "충북대학교.png" => "https://www.chungbuk.ac.kr/",
                             "청주시자원봉사센터2.png" => "https://cj1365.or.kr/",
+                            "hoseo_nursing_logo.png" => "https://www.hoseo.ac.kr/",
+                            "health_leaders_forum.svg" => "#footer",
+                            "knut_university.png" => "https://www.ut.ac.kr/",
                         ];
                         // Duplicate logos for seamless carousel
                         for ($i = 0; $i < 2; $i++) {
                             foreach ($logos as $file => $link) {
-                                echo "<a href=\"$link\" target=\"_blank\"><img src=\"/web_basic/img/common/$file\" alt=\"$file\"></a>";
+                                $target = strpos($link, 'http') === 0 ? ' target="_blank" rel="noopener noreferrer"' : '';
+                                echo "<a href=\"$link\"$target><img src=\"/web_basic/img/common/$file\" alt=\"$file\"></a>";
                             }
                         }
                         ?>
