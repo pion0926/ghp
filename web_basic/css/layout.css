@@ -792,11 +792,19 @@ body.modalOpen {
   }
 
   .allNavView .allNavCont #mobileGnb .depth {
+    position: static;
+    top: auto;
+    left: auto;
+    z-index: auto;
+    min-width: 0;
     display: none;
     margin: 0 0 6px;
     background: #fff;
     border: 1px solid #edf1f3;
     border-top: 0;
+    border-radius: 0 0 6px 6px;
+    box-shadow: none;
+    animation: none;
   }
 
   .allNavView .allNavCont #mobileGnb .depth ul li a {
