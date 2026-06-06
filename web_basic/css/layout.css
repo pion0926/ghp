@@ -695,6 +695,61 @@ body.modalOpen {
     background: rgba(0, 0, 0, 0.56);
   }
 
+  #header .headerWrap {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding: 8px 12px;
+  }
+
+  #header h1 {
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  #header h1 img {
+    height: 42px;
+    max-width: 148px;
+    object-fit: contain;
+  }
+
+  #header .rightCont {
+    order: 2;
+    display: flex !important;
+    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 0;
+    margin-left: auto;
+  }
+
+  #header .rightCont .navList {
+    display: none !important;
+  }
+
+  #header .rightCont .btnGo {
+    display: block !important;
+    margin: 0;
+  }
+
+  #header .rightCont .btnGo a {
+    min-width: 86px;
+    padding: 9px 12px 10px;
+    border-radius: 6px;
+    font-size: 1.45rem;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  #header .btnAllNav {
+    order: 3;
+    flex: 0 0 auto;
+    display: block;
+    margin-left: 0;
+    padding: 7px 4px 7px 8px;
+    font-size: 3.2rem;
+  }
+
   .allNavCont {
     width: calc(100% - 28px);
     max-width: 420px;
