@@ -69,7 +69,7 @@ if (session_status() === PHP_SESSION_NONE) session_start();
                 </a>
             </h1>
 
-            <button class="btnAllNav" aria-label="모바일 메뉴 열기">☰</button>
+            <button class="btnAllNav" type="button" aria-label="모바일 메뉴 열기" aria-controls="mobileNavigation" aria-expanded="false">☰</button>
 
             <div class="rightCont">
                 <nav class="navList">
@@ -82,10 +82,14 @@ if (session_status() === PHP_SESSION_NONE) session_start();
                 </p>
             </div>
         </div>
-        <div class="allNavView">
-        <div class="allNavCont">
-            <div class="allNavClose">&times;</div>
-            <ul id="gnb">
+        <div class="allNavView" id="mobileNavigation" aria-hidden="true">
+        <div class="allNavCont" role="dialog" aria-modal="true" aria-label="모바일 전체 메뉴">
+            <button type="button" class="allNavClose" aria-label="모바일 메뉴 닫기">&times;</button>
+            <div class="mobileParticipation">
+                <button type="button" onclick="openDonationModal()">참여하기</button>
+                <p>정회원 또는 후원회원으로 함께해 주세요</p>
+            </div>
+            <ul id="mobileGnb">
             <li>
                 <a href="javascript:void(0);" class="mobileMenuToggle">단체소개 <span class="arrow">▼</span> </a>
                 <div class="depth">

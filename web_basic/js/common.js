@@ -25,19 +25,33 @@ $(function () {
         }
     });
 
+    function openAllNav() {
+        $(".allNavView").addClass("active").attr("aria-hidden", "false");
+        $(".btnAllNav").attr("aria-expanded", "true");
+    }
+
+    function closeAllNav() {
+        $(".allNavView").removeClass("active").attr("aria-hidden", "true");
+        $(".btnAllNav").attr("aria-expanded", "false");
+    }
+
     $(".btnAllNav").on("click", function () {
-        $(".allNavView").addClass("active");
+        openAllNav();
     });
 
     $(".allNavClose").on("click", function () {
-        $(".allNavView").removeClass("active");
+        closeAllNav();
     });
 
     $(document).mouseup(function (e) {
         var container = $(".allNavView .allNavCont");
         if (!container.is(e.target) && container.has(e.target).length === 0) {
-            $(".allNavView").removeClass("active");
+            closeAllNav();
         }
+    });
+
+    $(document).on("click", ".mobileParticipation button", function () {
+        closeAllNav();
     });
 
     $("#header #gnb").mouseenter(function () {

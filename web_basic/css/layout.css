@@ -650,6 +650,109 @@ body.modalOpen {
   justify-content: center;
 }
 
+/* Mobile navigation refinements */
+.allNavView.active {
+  display: block;
+}
+
+.allNavView .allNavCont #mobileGnb {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.mobileParticipation {
+  margin: 34px 0 22px;
+  padding: 18px 16px;
+  border: 1px solid #dbe8e2;
+  background: #f6fbf8;
+  text-align: center;
+}
+
+.mobileParticipation button {
+  width: 100%;
+  min-height: 48px;
+  border: 0;
+  border-radius: 6px;
+  background: #00afb1;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.mobileParticipation p {
+  margin-top: 9px;
+  color: #4c5a60;
+  font-size: 1.3rem;
+  line-height: 1.45;
+}
+
+@media screen and (max-width: 767px) {
+  .allNavView {
+    background: rgba(0, 0, 0, 0.56);
+  }
+
+  .allNavCont {
+    width: calc(100% - 28px);
+    max-width: 420px;
+    padding: 20px 16px 28px;
+    box-sizing: border-box;
+  }
+
+  .allNavClose {
+    top: 14px;
+    right: 16px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #10222a;
+    font-size: 3.4rem;
+    line-height: 1;
+  }
+
+  .allNavView .allNavCont #mobileGnb > li > a.mobileMenuToggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 56px;
+    padding: 0 18px;
+    border: 1px solid #e7ecef;
+    background: #fff;
+    color: #1f3138;
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: left;
+    box-sizing: border-box;
+  }
+
+  .allNavView .allNavCont #mobileGnb > li > a.mobileMenuToggle.active {
+    border-color: #00afb1;
+    color: #007f81;
+    background: #f3fbfb;
+  }
+
+  .allNavView .allNavCont #mobileGnb .depth {
+    display: none;
+    margin: 0 0 6px;
+    background: #fff;
+    border: 1px solid #edf1f3;
+    border-top: 0;
+  }
+
+  .allNavView .allNavCont #mobileGnb .depth ul li a {
+    padding: 13px 18px;
+    border-bottom: 1px solid #f0f2f4;
+    background: #fff;
+    color: #39484e;
+    font-size: 1.5rem;
+  }
+}
+
 .donationModalPanel {
   position: relative;
   width: min(920px, 100%);
