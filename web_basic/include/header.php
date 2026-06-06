@@ -1,5 +1,8 @@
 <?php
 if (session_status() === PHP_SESSION_NONE) session_start();
+header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+header('Pragma: no-cache');
+$assetVersion = '20260606-2030';
 ?>
 
 <!DOCTYPE html>
@@ -33,19 +36,19 @@ if (session_status() === PHP_SESSION_NONE) session_start();
     </script>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="/web_basic/css/default.css" />
-    <link rel="stylesheet" href="/web_basic/css/layout.css" />
-    <link rel="stylesheet" href="/web_basic/css/contents.css" />
-    <link rel="stylesheet" href="/web_basic/css/board.css" />
-    <link rel="stylesheet" href="/web_basic/js/slick/slick.css" />
-    <link rel="stylesheet" href="/web_basic/css/main.css" />
+    <link rel="stylesheet" href="/web_basic/css/default.css?v=<?php echo $assetVersion; ?>" />
+    <link rel="stylesheet" href="/web_basic/css/layout.css?v=<?php echo $assetVersion; ?>" />
+    <link rel="stylesheet" href="/web_basic/css/contents.css?v=<?php echo $assetVersion; ?>" />
+    <link rel="stylesheet" href="/web_basic/css/board.css?v=<?php echo $assetVersion; ?>" />
+    <link rel="stylesheet" href="/web_basic/js/slick/slick.css?v=<?php echo $assetVersion; ?>" />
+    <link rel="stylesheet" href="/web_basic/css/main.css?v=<?php echo $assetVersion; ?>" />
 
     <!-- Scripts -->
-    <script src="/web_basic/js/jquery-3.6.0.min.js"></script>
-    <script src="/web_basic/js/common.js"></script>
-    <script src="/web_basic/js/pictuerfill.js"></script>
-    <script src="/web_basic/js/slick/slick.js"></script>
-    <script src="/web_basic/js/main.js"></script>
+    <script src="/web_basic/js/jquery-3.6.0.min.js?v=<?php echo $assetVersion; ?>"></script>
+    <script src="/web_basic/js/common.js?v=<?php echo $assetVersion; ?>"></script>
+    <script src="/web_basic/js/pictuerfill.js?v=<?php echo $assetVersion; ?>"></script>
+    <script src="/web_basic/js/slick/slick.js?v=<?php echo $assetVersion; ?>"></script>
+    <script src="/web_basic/js/main.js?v=<?php echo $assetVersion; ?>"></script>
 </head>
 
 <body class="pc">
